@@ -32,9 +32,10 @@ If you just want to test out the app and get data as fast as possible, consider 
 
 # Version
 
-*  Version 1.0, Build 1
+*  Version 1.1.0, Build 13
 *  iOS 8.4 SDK
 *  Xcode Version 6.4 (6E35b)
+* Swift v1.2
 
 # Contact Information
 
