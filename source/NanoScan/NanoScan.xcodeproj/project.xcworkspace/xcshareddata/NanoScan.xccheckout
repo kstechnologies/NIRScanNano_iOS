@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C934F8E5-6A90-4B0C-9D0C-9143C4DEEEEF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NanoScan</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>62E0E561AC31261F13F2915D575CCE1D87853FA3</key>
+		<string>https://github.com/kstechnologies/NanoScan.git</string>
+		<key>9025163822AAEA7A2D8AC9210D0874A56F62B462</key>
+		<string>https://github.com/danielgindi/ios-charts.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>source/NanoScan/NanoScan.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>62E0E561AC31261F13F2915D575CCE1D87853FA3</key>
+		<string>../../../..</string>
+		<key>9025163822AAEA7A2D8AC9210D0874A56F62B462</key>
+		<string>../../../../../ios-charts</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kstechnologies/NanoScan.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>62E0E561AC31261F13F2915D575CCE1D87853FA3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9025163822AAEA7A2D8AC9210D0874A56F62B462</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ios-charts</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>62E0E561AC31261F13F2915D575CCE1D87853FA3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NanoScan</string>
+		</dict>
+	</array>
+</dict>
+</plist>

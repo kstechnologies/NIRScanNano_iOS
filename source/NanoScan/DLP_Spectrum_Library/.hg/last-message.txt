@@ -1,0 +1,2 @@
+Copyright headers updated to comply with required copyright notice
+http://analogsw-wiki.design.ti.com/index.php/Coding#File_Conventions

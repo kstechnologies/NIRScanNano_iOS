@@ -1,0 +1,809 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C402A8BD1A3C78310081AFC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C402A8BC1A3C78310081AFC9 /* main.m */; };
+		C402A8C01A3C78310081AFC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C402A8BF1A3C78310081AFC9 /* AppDelegate.m */; };
+		C402A8C31A3C78310081AFC9 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C402A8C21A3C78310081AFC9 /* MasterViewController.m */; };
+		C402A8C61A3C78310081AFC9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C402A8C51A3C78310081AFC9 /* DetailViewController.m */; };
+		C402A8C91A3C78310081AFC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C402A8C71A3C78310081AFC9 /* Main.storyboard */; };
+		C402A8CB1A3C78310081AFC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C402A8CA1A3C78310081AFC9 /* Images.xcassets */; };
+		C402A8CE1A3C78310081AFC9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C402A8CC1A3C78310081AFC9 /* LaunchScreen.xib */; };
+		C402A8E51A3C7B5B0081AFC9 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C402A8E41A3C7B5B0081AFC9 /* ScanViewController.m */; };
+		C402A8E81A3C7FCD0081AFC9 /* ConfigureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C402A8E71A3C7FCD0081AFC9 /* ConfigureViewController.m */; };
+		C42172841B1779AE00D27611 /* ScanConfigurationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C42172831B1779AE00D27611 /* ScanConfigurationTableViewCell.m */; };
+		C4275A631AAABC9800D9B66A /* KSTDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4275A621AAABC9800D9B66A /* KSTDataManager.m */; };
+		C4275A651AAAC16700D9B66A /* Apple.csv in Resources */ = {isa = PBXBuildFile; fileRef = C4275A641AAAC16700D9B66A /* Apple.csv */; };
+		C42DC41E1AFC241400256B80 /* ScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C42DC41D1AFC241400256B80 /* ScannerViewController.m */; };
+		C4353B3F1A9628360003B286 /* ConfigurationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4353B3E1A9628360003B286 /* ConfigurationsViewController.m */; };
+		C447973E1A7C4916003D7567 /* KSTNanoSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = C447973D1A7C4916003D7567 /* KSTNanoSDK.m */; };
+		C453D3151A9E130E000946A9 /* ScanDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C453D3141A9E130E000946A9 /* ScanDataViewController.m */; };
+		C45E6C691A3F3BD5006519D9 /* ScanViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45E6C681A3F3BD5006519D9 /* ScanViewTableViewCell.m */; };
+		C45E6C6C1A3F460A006519D9 /* DeviceInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45E6C6B1A3F460A006519D9 /* DeviceInformationViewController.m */; };
+		C473D7081A9B5C01009EE212 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C473D7071A9B5C01009EE212 /* InfoViewController.m */; };
+		C473D70B1A9B5C12009EE212 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C473D70A1A9B5C12009EE212 /* SettingsViewController.m */; };
+		C48B6C641BA79B150079F970 /* KSTSpectrumLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48B6C631BA79B150079F970 /* KSTSpectrumLibrary.framework */; };
+		C48B6C651BA79D940079F970 /* KSTSpectrumLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48B6C631BA79B150079F970 /* KSTSpectrumLibrary.framework */; };
+		C48B6C661BA79D940079F970 /* KSTSpectrumLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C48B6C631BA79B150079F970 /* KSTSpectrumLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C49158B91AAB73A100021B3C /* aspirin.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158B81AAB73A100021B3C /* aspirin.csv */; };
+		C49158BB1AAB769600021B3C /* BC.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158BA1AAB769600021B3C /* BC.csv */; };
+		C49158D91AAB7EAC00021B3C /* Bell_Pepper.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158D81AAB7EAC00021B3C /* Bell_Pepper.csv */; };
+		C49158DB1AAB7F2C00021B3C /* CoconutOil.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158DA1AAB7F2C00021B3C /* CoconutOil.csv */; };
+		C49158DD1AAB7F6200021B3C /* coffee.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158DC1AAB7F6200021B3C /* coffee.csv */; };
+		C49158DF1AAB7F8E00021B3C /* corn_starch.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158DE1AAB7F8E00021B3C /* corn_starch.csv */; };
+		C49158E11AAB7FBA00021B3C /* Eucerin_Lotion.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158E01AAB7FBA00021B3C /* Eucerin_Lotion.csv */; };
+		C49158E31AAB807400021B3C /* Flour.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158E21AAB807400021B3C /* Flour.csv */; };
+		C49158E51AAB809C00021B3C /* Glucose.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158E41AAB809C00021B3C /* Glucose.csv */; };
+		C49158E71AAB80D100021B3C /* out_of_spec_aspirin.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158E61AAB80D100021B3C /* out_of_spec_aspirin.csv */; };
+		C49158E91AAB80F800021B3C /* SRM2036.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158E81AAB80F800021B3C /* SRM2036.csv */; };
+		C49158EB1AAB811A00021B3C /* Sucrose.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158EA1AAB811A00021B3C /* Sucrose.csv */; };
+		C49158ED1AAB814800021B3C /* Tomato.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158EC1AAB814800021B3C /* Tomato.csv */; };
+		C49158EF1AAB817000021B3C /* wonderbread.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158EE1AAB817000021B3C /* wonderbread.csv */; };
+		C4A89EDF1B7BDF1700100C4B /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A89EDE1B7BDEF000100C4B /* Charts.framework */; };
+		C4A89EE01B7BDF1700100C4B /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4A89EDE1B7BDEF000100C4B /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4A89EF91B7BEB3E00100C4B /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A89EF81B7BEB3E00100C4B /* BalloonMarker.swift */; };
+		C4F7F9511B59C35700D6C03B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F94F1B59C35700D6C03B /* Bolts.framework */; };
+		C4F7F9521B59C35700D6C03B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9501B59C35700D6C03B /* Parse.framework */; };
+		C4F7F9541B59C36900D6C03B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9531B59C36900D6C03B /* AudioToolbox.framework */; };
+		C4F7F9561B59C36E00D6C03B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9551B59C36E00D6C03B /* CFNetwork.framework */; };
+		C4F7F9581B59C37300D6C03B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9571B59C37300D6C03B /* CoreGraphics.framework */; };
+		C4F7F95A1B59C37800D6C03B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9591B59C37800D6C03B /* CoreLocation.framework */; };
+		C4F7F95C1B59C37D00D6C03B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F95B1B59C37D00D6C03B /* QuartzCore.framework */; };
+		C4F7F95E1B59C38200D6C03B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F95D1B59C38200D6C03B /* Security.framework */; };
+		C4F7F9621B59C38B00D6C03B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9611B59C38B00D6C03B /* SystemConfiguration.framework */; };
+		C4F7F9641B59C39000D6C03B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9631B59C39000D6C03B /* libz.dylib */; };
+		C4F7F9661B59C39700D6C03B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9651B59C39700D6C03B /* libsqlite3.dylib */; };
+		C4F7F96D1B59CAD200D6C03B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F96C1B59CAD200D6C03B /* AssetsLibrary.framework */; };
+		C4F7F96F1B59CADA00D6C03B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F96E1B59CADA00D6C03B /* CoreText.framework */; };
+		C4F7F9711B59CAE500D6C03B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9701B59CAE500D6C03B /* Foundation.framework */; };
+		C4F7F9731B59CAEC00D6C03B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9721B59CAEC00D6C03B /* MobileCoreServices.framework */; };
+		C4F7F9751B59CAF700D6C03B /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9741B59CAF700D6C03B /* QuickLook.framework */; };
+		C4F7F9771B59CB0300D6C03B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9761B59CB0300D6C03B /* UIKit.framework */; };
+		C4F7F9791B59CB0A00D6C03B /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9781B59CB0A00D6C03B /* libc++.dylib */; };
+		C4F7F98C1B59CDB700D6C03B /* CHANGELOG in Resources */ = {isa = PBXBuildFile; fileRef = C4F7F9811B59CDB700D6C03B /* CHANGELOG */; };
+		C4F7F98D1B59CDB700D6C03B /* de.bitstadium.HockeySDK-iOS-3.7.1.docset in Resources */ = {isa = PBXBuildFile; fileRef = C4F7F9821B59CDB700D6C03B /* de.bitstadium.HockeySDK-iOS-3.7.1.docset */; };
+		C4F7F98E1B59CDB700D6C03B /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9841B59CDB700D6C03B /* HockeySDK.framework */; };
+		C4F7F98F1B59CDB700D6C03B /* HockeySDK.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C4F7F9861B59CDB700D6C03B /* HockeySDK.xcconfig */; };
+		C4F7F9901B59CDB700D6C03B /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C4F7F9871B59CDB700D6C03B /* HockeySDKResources.bundle */; };
+		C4F7F9911B59CDB700D6C03B /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9891B59CDB700D6C03B /* HockeySDK.framework */; };
+		C4F7F9921B59CDB700D6C03B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C4F7F98A1B59CDB700D6C03B /* LICENSE */; };
+		C4FF09151A827F4300B6E9BE /* DeviceStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF09141A827F4300B6E9BE /* DeviceStatusViewController.m */; };
+		C4FF09181A83CAAF00B6E9BE /* DiagnosticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF09171A83CAAF00B6E9BE /* DiagnosticViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4A89EDD1B7BDEF000100C4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4A89ED91B7BDEF000100C4B /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = Charts;
+		};
+		C4A89EE11B7BDF1700100C4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4A89ED91B7BDEF000100C4B /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = Charts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C4A89ED51B7BDBA200100C4B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C48B6C661BA79D940079F970 /* KSTSpectrumLibrary.framework in Embed Frameworks */,
+				C4A89EE01B7BDF1700100C4B /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C402A8B71A3C78310081AFC9 /* NanoScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C402A8BB1A3C78310081AFC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C402A8BC1A3C78310081AFC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C402A8BE1A3C78310081AFC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C402A8BF1A3C78310081AFC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C402A8C11A3C78310081AFC9 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		C402A8C21A3C78310081AFC9 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		C402A8C41A3C78310081AFC9 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		C402A8C51A3C78310081AFC9 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C402A8C81A3C78310081AFC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C402A8CA1A3C78310081AFC9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C402A8CD1A3C78310081AFC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C402A8E31A3C7B5B0081AFC9 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		C402A8E41A3C7B5B0081AFC9 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		C402A8E61A3C7FCD0081AFC9 /* ConfigureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureViewController.h; sourceTree = "<group>"; };
+		C402A8E71A3C7FCD0081AFC9 /* ConfigureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigureViewController.m; sourceTree = "<group>"; };
+		C42172821B1779AE00D27611 /* ScanConfigurationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanConfigurationTableViewCell.h; sourceTree = "<group>"; };
+		C42172831B1779AE00D27611 /* ScanConfigurationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanConfigurationTableViewCell.m; sourceTree = "<group>"; };
+		C4275A611AAABC9800D9B66A /* KSTDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSTDataManager.h; path = ../KSTDataManager.h; sourceTree = "<group>"; };
+		C4275A621AAABC9800D9B66A /* KSTDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSTDataManager.m; path = ../KSTDataManager.m; sourceTree = "<group>"; };
+		C4275A641AAAC16700D9B66A /* Apple.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Apple.csv; sourceTree = "<group>"; };
+		C42DC41C1AFC241400256B80 /* ScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScannerViewController.h; sourceTree = "<group>"; };
+		C42DC41D1AFC241400256B80 /* ScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScannerViewController.m; sourceTree = "<group>"; };
+		C4353B3D1A9628360003B286 /* ConfigurationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationsViewController.h; sourceTree = "<group>"; };
+		C4353B3E1A9628360003B286 /* ConfigurationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationsViewController.m; sourceTree = "<group>"; };
+		C447973C1A7C4916003D7567 /* KSTNanoSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSTNanoSDK.h; path = NanoScan/KSTNanoSDK.h; sourceTree = "<group>"; };
+		C447973D1A7C4916003D7567 /* KSTNanoSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSTNanoSDK.m; path = NanoScan/KSTNanoSDK.m; sourceTree = "<group>"; };
+		C453D3131A9E130E000946A9 /* ScanDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanDataViewController.h; sourceTree = "<group>"; };
+		C453D3141A9E130E000946A9 /* ScanDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanDataViewController.m; sourceTree = "<group>"; };
+		C45E6C671A3F3BD5006519D9 /* ScanViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewTableViewCell.h; sourceTree = "<group>"; };
+		C45E6C681A3F3BD5006519D9 /* ScanViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewTableViewCell.m; sourceTree = "<group>"; };
+		C45E6C6A1A3F460A006519D9 /* DeviceInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInformationViewController.h; sourceTree = "<group>"; };
+		C45E6C6B1A3F460A006519D9 /* DeviceInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInformationViewController.m; sourceTree = "<group>"; };
+		C473D7061A9B5C01009EE212 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		C473D7071A9B5C01009EE212 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		C473D7091A9B5C12009EE212 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		C473D70A1A9B5C12009EE212 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		C48B6C631BA79B150079F970 /* KSTSpectrumLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KSTSpectrumLibrary.framework; sourceTree = "<group>"; };
+		C49158B81AAB73A100021B3C /* aspirin.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aspirin.csv; sourceTree = "<group>"; };
+		C49158BA1AAB769600021B3C /* BC.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BC.csv; sourceTree = "<group>"; };
+		C49158D81AAB7EAC00021B3C /* Bell_Pepper.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bell_Pepper.csv; sourceTree = "<group>"; };
+		C49158DA1AAB7F2C00021B3C /* CoconutOil.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CoconutOil.csv; sourceTree = "<group>"; };
+		C49158DC1AAB7F6200021B3C /* coffee.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coffee.csv; sourceTree = "<group>"; };
+		C49158DE1AAB7F8E00021B3C /* corn_starch.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = corn_starch.csv; sourceTree = "<group>"; };
+		C49158E01AAB7FBA00021B3C /* Eucerin_Lotion.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Eucerin_Lotion.csv; sourceTree = "<group>"; };
+		C49158E21AAB807400021B3C /* Flour.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Flour.csv; sourceTree = "<group>"; };
+		C49158E41AAB809C00021B3C /* Glucose.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Glucose.csv; sourceTree = "<group>"; };
+		C49158E61AAB80D100021B3C /* out_of_spec_aspirin.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = out_of_spec_aspirin.csv; sourceTree = "<group>"; };
+		C49158E81AAB80F800021B3C /* SRM2036.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SRM2036.csv; sourceTree = "<group>"; };
+		C49158EA1AAB811A00021B3C /* Sucrose.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sucrose.csv; sourceTree = "<group>"; };
+		C49158EC1AAB814800021B3C /* Tomato.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tomato.csv; sourceTree = "<group>"; };
+		C49158EE1AAB817000021B3C /* wonderbread.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wonderbread.csv; sourceTree = "<group>"; };
+		C4A89ED91B7BDEF000100C4B /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../ios-charts/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
+		C4A89EEE1B7BE56800100C4B /* NanoScan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NanoScan-Bridging-Header.h"; sourceTree = "<group>"; };
+		C4A89EF81B7BEB3E00100C4B /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BalloonMarker.swift; path = ../BalloonMarker.swift; sourceTree = "<group>"; };
+		C4F7F94F1B59C35700D6C03B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		C4F7F9501B59C35700D6C03B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		C4F7F9531B59C36900D6C03B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C4F7F9551B59C36E00D6C03B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C4F7F9571B59C37300D6C03B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C4F7F9591B59C37800D6C03B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C4F7F95B1B59C37D00D6C03B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C4F7F95D1B59C38200D6C03B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C4F7F9611B59C38B00D6C03B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C4F7F9631B59C39000D6C03B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		C4F7F9651B59C39700D6C03B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		C4F7F96C1B59CAD200D6C03B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		C4F7F96E1B59CADA00D6C03B /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		C4F7F9701B59CAE500D6C03B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C4F7F9721B59CAEC00D6C03B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C4F7F9741B59CAF700D6C03B /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		C4F7F9761B59CB0300D6C03B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C4F7F9781B59CB0A00D6C03B /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		C4F7F9811B59CDB700D6C03B /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
+		C4F7F9821B59CDB700D6C03B /* de.bitstadium.HockeySDK-iOS-3.7.1.docset */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "de.bitstadium.HockeySDK-iOS-3.7.1.docset"; sourceTree = "<group>"; };
+		C4F7F9841B59CDB700D6C03B /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
+		C4F7F9861B59CDB700D6C03B /* HockeySDK.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = HockeySDK.xcconfig; sourceTree = "<group>"; };
+		C4F7F9871B59CDB700D6C03B /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
+		C4F7F9891B59CDB700D6C03B /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
+		C4F7F98A1B59CDB700D6C03B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C4F7F98B1B59CDB700D6C03B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C4FF09131A827F4300B6E9BE /* DeviceStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceStatusViewController.h; sourceTree = "<group>"; };
+		C4FF09141A827F4300B6E9BE /* DeviceStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceStatusViewController.m; sourceTree = "<group>"; };
+		C4FF09161A83CAAF00B6E9BE /* DiagnosticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticViewController.h; sourceTree = "<group>"; };
+		C4FF09171A83CAAF00B6E9BE /* DiagnosticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C402A8B41A3C78310081AFC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4F7F9791B59CB0A00D6C03B /* libc++.dylib in Frameworks */,
+				C4F7F9771B59CB0300D6C03B /* UIKit.framework in Frameworks */,
+				C4F7F9751B59CAF700D6C03B /* QuickLook.framework in Frameworks */,
+				C4A89EDF1B7BDF1700100C4B /* Charts.framework in Frameworks */,
+				C48B6C651BA79D940079F970 /* KSTSpectrumLibrary.framework in Frameworks */,
+				C48B6C641BA79B150079F970 /* KSTSpectrumLibrary.framework in Frameworks */,
+				C4F7F9731B59CAEC00D6C03B /* MobileCoreServices.framework in Frameworks */,
+				C4F7F9711B59CAE500D6C03B /* Foundation.framework in Frameworks */,
+				C4F7F96F1B59CADA00D6C03B /* CoreText.framework in Frameworks */,
+				C4F7F96D1B59CAD200D6C03B /* AssetsLibrary.framework in Frameworks */,
+				C4F7F9661B59C39700D6C03B /* libsqlite3.dylib in Frameworks */,
+				C4F7F98E1B59CDB700D6C03B /* HockeySDK.framework in Frameworks */,
+				C4F7F9641B59C39000D6C03B /* libz.dylib in Frameworks */,
+				C4F7F9621B59C38B00D6C03B /* SystemConfiguration.framework in Frameworks */,
+				C4F7F95E1B59C38200D6C03B /* Security.framework in Frameworks */,
+				C4F7F95C1B59C37D00D6C03B /* QuartzCore.framework in Frameworks */,
+				C4F7F95A1B59C37800D6C03B /* CoreLocation.framework in Frameworks */,
+				C4F7F9581B59C37300D6C03B /* CoreGraphics.framework in Frameworks */,
+				C4F7F9561B59C36E00D6C03B /* CFNetwork.framework in Frameworks */,
+				C4F7F9541B59C36900D6C03B /* AudioToolbox.framework in Frameworks */,
+				C4F7F9521B59C35700D6C03B /* Parse.framework in Frameworks */,
+				C4F7F9511B59C35700D6C03B /* Bolts.framework in Frameworks */,
+				C4F7F9911B59CDB700D6C03B /* HockeySDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C402A8AE1A3C78310081AFC9 = {
+			isa = PBXGroup;
+			children = (
+				C4A89CE91B7BD33000100C4B /* ios-charts */,
+				C473D70D1A9B63E1009EE212 /* Sample Data */,
+				C4FF091A1A83DAA000B6E9BE /* NIRscan Nano SDK */,
+				C402A8B91A3C78310081AFC9 /* NanoScan (iOS) */,
+				C47E4C051B7BD090000C4DDD /* Frameworks */,
+				C402A8B81A3C78310081AFC9 /* Products */,
+				C4A89EEE1B7BE56800100C4B /* NanoScan-Bridging-Header.h */,
+			);
+			sourceTree = "<group>";
+		};
+		C402A8B81A3C78310081AFC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C402A8B71A3C78310081AFC9 /* NanoScan.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C402A8B91A3C78310081AFC9 /* NanoScan (iOS) */ = {
+			isa = PBXGroup;
+			children = (
+				C402A8C71A3C78310081AFC9 /* Main.storyboard */,
+				C402A8CC1A3C78310081AFC9 /* LaunchScreen.xib */,
+				C402A8CA1A3C78310081AFC9 /* Images.xcassets */,
+				C402A8BB1A3C78310081AFC9 /* Info.plist */,
+				C402A8BC1A3C78310081AFC9 /* main.m */,
+				C402A8BE1A3C78310081AFC9 /* AppDelegate.h */,
+				C402A8BF1A3C78310081AFC9 /* AppDelegate.m */,
+				C473D70E1A9B6409009EE212 /* Helper Classes */,
+				C473D70C1A9B63C1009EE212 /* View Controllers */,
+			);
+			name = "NanoScan (iOS)";
+			path = NanoScan;
+			sourceTree = "<group>";
+		};
+		C473D70C1A9B63C1009EE212 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C402A8C11A3C78310081AFC9 /* MasterViewController.h */,
+				C402A8C21A3C78310081AFC9 /* MasterViewController.m */,
+				C42DC41C1AFC241400256B80 /* ScannerViewController.h */,
+				C42DC41D1AFC241400256B80 /* ScannerViewController.m */,
+				C473D7061A9B5C01009EE212 /* InfoViewController.h */,
+				C473D7071A9B5C01009EE212 /* InfoViewController.m */,
+				C473D7091A9B5C12009EE212 /* SettingsViewController.h */,
+				C473D70A1A9B5C12009EE212 /* SettingsViewController.m */,
+				C402A8C41A3C78310081AFC9 /* DetailViewController.h */,
+				C402A8C51A3C78310081AFC9 /* DetailViewController.m */,
+				C4A89EF81B7BEB3E00100C4B /* BalloonMarker.swift */,
+				C402A8E31A3C7B5B0081AFC9 /* ScanViewController.h */,
+				C402A8E41A3C7B5B0081AFC9 /* ScanViewController.m */,
+				C45E6C671A3F3BD5006519D9 /* ScanViewTableViewCell.h */,
+				C45E6C681A3F3BD5006519D9 /* ScanViewTableViewCell.m */,
+				C402A8E61A3C7FCD0081AFC9 /* ConfigureViewController.h */,
+				C402A8E71A3C7FCD0081AFC9 /* ConfigureViewController.m */,
+				C4FF09191A83CCF300B6E9BE /* ConfigureView */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C473D70D1A9B63E1009EE212 /* Sample Data */ = {
+			isa = PBXGroup;
+			children = (
+				C4275A641AAAC16700D9B66A /* Apple.csv */,
+				C49158B81AAB73A100021B3C /* aspirin.csv */,
+				C49158BA1AAB769600021B3C /* BC.csv */,
+				C49158D81AAB7EAC00021B3C /* Bell_Pepper.csv */,
+				C49158DA1AAB7F2C00021B3C /* CoconutOil.csv */,
+				C49158DC1AAB7F6200021B3C /* coffee.csv */,
+				C49158DE1AAB7F8E00021B3C /* corn_starch.csv */,
+				C49158E01AAB7FBA00021B3C /* Eucerin_Lotion.csv */,
+				C49158E21AAB807400021B3C /* Flour.csv */,
+				C49158E41AAB809C00021B3C /* Glucose.csv */,
+				C49158E61AAB80D100021B3C /* out_of_spec_aspirin.csv */,
+				C49158E81AAB80F800021B3C /* SRM2036.csv */,
+				C49158EA1AAB811A00021B3C /* Sucrose.csv */,
+				C49158EC1AAB814800021B3C /* Tomato.csv */,
+				C49158EE1AAB817000021B3C /* wonderbread.csv */,
+			);
+			name = "Sample Data";
+			path = NanoScan;
+			sourceTree = "<group>";
+		};
+		C473D70E1A9B6409009EE212 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C4275A611AAABC9800D9B66A /* KSTDataManager.h */,
+				C4275A621AAABC9800D9B66A /* KSTDataManager.m */,
+			);
+			name = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		C47E4C051B7BD090000C4DDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4F7F9781B59CB0A00D6C03B /* libc++.dylib */,
+				C4F7F9761B59CB0300D6C03B /* UIKit.framework */,
+				C4F7F9741B59CAF700D6C03B /* QuickLook.framework */,
+				C4F7F9721B59CAEC00D6C03B /* MobileCoreServices.framework */,
+				C4F7F9701B59CAE500D6C03B /* Foundation.framework */,
+				C4F7F96E1B59CADA00D6C03B /* CoreText.framework */,
+				C4F7F96C1B59CAD200D6C03B /* AssetsLibrary.framework */,
+				C4F7F9671B59C92D00D6C03B /* Vendor */,
+				C4F7F9651B59C39700D6C03B /* libsqlite3.dylib */,
+				C4F7F9631B59C39000D6C03B /* libz.dylib */,
+				C4F7F9611B59C38B00D6C03B /* SystemConfiguration.framework */,
+				C4F7F95D1B59C38200D6C03B /* Security.framework */,
+				C4F7F95B1B59C37D00D6C03B /* QuartzCore.framework */,
+				C4F7F9591B59C37800D6C03B /* CoreLocation.framework */,
+				C4F7F9571B59C37300D6C03B /* CoreGraphics.framework */,
+				C4F7F9551B59C36E00D6C03B /* CFNetwork.framework */,
+				C4F7F9531B59C36900D6C03B /* AudioToolbox.framework */,
+				C4F7F94F1B59C35700D6C03B /* Bolts.framework */,
+				C4F7F9501B59C35700D6C03B /* Parse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4A89CE91B7BD33000100C4B /* ios-charts */ = {
+			isa = PBXGroup;
+			children = (
+				C4A89CF61B7BD38700100C4B /* Charts */,
+			);
+			name = "ios-charts";
+			sourceTree = "<group>";
+		};
+		C4A89CF61B7BD38700100C4B /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				C4A89ED91B7BDEF000100C4B /* Charts.xcodeproj */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		C4A89EDA1B7BDEF000100C4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4A89EDE1B7BDEF000100C4B /* Charts.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4F7F9671B59C92D00D6C03B /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				C4F7F9801B59CDB700D6C03B /* HockeySDK-iOS */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		C4F7F9801B59CDB700D6C03B /* HockeySDK-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C4F7F9811B59CDB700D6C03B /* CHANGELOG */,
+				C4F7F9821B59CDB700D6C03B /* de.bitstadium.HockeySDK-iOS-3.7.1.docset */,
+				C4F7F9831B59CDB700D6C03B /* HockeySDK.embeddedframework */,
+				C4F7F9881B59CDB700D6C03B /* HockeySDKCrashOnly */,
+				C4F7F98A1B59CDB700D6C03B /* LICENSE */,
+				C4F7F98B1B59CDB700D6C03B /* README.md */,
+			);
+			path = "HockeySDK-iOS";
+			sourceTree = "<group>";
+		};
+		C4F7F9831B59CDB700D6C03B /* HockeySDK.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C4F7F9841B59CDB700D6C03B /* HockeySDK.framework */,
+				C4F7F9851B59CDB700D6C03B /* Resources */,
+			);
+			path = HockeySDK.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C4F7F9851B59CDB700D6C03B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C4F7F9861B59CDB700D6C03B /* HockeySDK.xcconfig */,
+				C4F7F9871B59CDB700D6C03B /* HockeySDKResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C4F7F9881B59CDB700D6C03B /* HockeySDKCrashOnly */ = {
+			isa = PBXGroup;
+			children = (
+				C4F7F9891B59CDB700D6C03B /* HockeySDK.framework */,
+			);
+			path = HockeySDKCrashOnly;
+			sourceTree = "<group>";
+		};
+		C4FF09191A83CCF300B6E9BE /* ConfigureView */ = {
+			isa = PBXGroup;
+			children = (
+				C45E6C6A1A3F460A006519D9 /* DeviceInformationViewController.h */,
+				C45E6C6B1A3F460A006519D9 /* DeviceInformationViewController.m */,
+				C4FF09131A827F4300B6E9BE /* DeviceStatusViewController.h */,
+				C4FF09141A827F4300B6E9BE /* DeviceStatusViewController.m */,
+				C4FF09161A83CAAF00B6E9BE /* DiagnosticViewController.h */,
+				C4FF09171A83CAAF00B6E9BE /* DiagnosticViewController.m */,
+				C4353B3D1A9628360003B286 /* ConfigurationsViewController.h */,
+				C4353B3E1A9628360003B286 /* ConfigurationsViewController.m */,
+				C42172821B1779AE00D27611 /* ScanConfigurationTableViewCell.h */,
+				C42172831B1779AE00D27611 /* ScanConfigurationTableViewCell.m */,
+				C453D3131A9E130E000946A9 /* ScanDataViewController.h */,
+				C453D3141A9E130E000946A9 /* ScanDataViewController.m */,
+			);
+			name = ConfigureView;
+			sourceTree = "<group>";
+		};
+		C4FF091A1A83DAA000B6E9BE /* NIRscan Nano SDK */ = {
+			isa = PBXGroup;
+			children = (
+				C447973C1A7C4916003D7567 /* KSTNanoSDK.h */,
+				C447973D1A7C4916003D7567 /* KSTNanoSDK.m */,
+				C48B6C631BA79B150079F970 /* KSTSpectrumLibrary.framework */,
+			);
+			name = "NIRscan Nano SDK";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C402A8B61A3C78310081AFC9 /* NanoScan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C402A8DD1A3C78310081AFC9 /* Build configuration list for PBXNativeTarget "NanoScan" */;
+			buildPhases = (
+				C402A8B31A3C78310081AFC9 /* Sources */,
+				C402A8B41A3C78310081AFC9 /* Frameworks */,
+				C402A8B51A3C78310081AFC9 /* Resources */,
+				C4A89ED51B7BDBA200100C4B /* Embed Frameworks */,
+				C48B6C671BA849FE0079F970 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4A89EE21B7BDF1700100C4B /* PBXTargetDependency */,
+			);
+			name = NanoScan;
+			productName = NanoScan;
+			productReference = C402A8B71A3C78310081AFC9 /* NanoScan.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C402A8AF1A3C78310081AFC9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "KS Technologies";
+				TargetAttributes = {
+					C402A8B61A3C78310081AFC9 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = FYP9A66WY3;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = C402A8B21A3C78310081AFC9 /* Build configuration list for PBXProject "NanoScan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C402A8AE1A3C78310081AFC9;
+			productRefGroup = C402A8B81A3C78310081AFC9 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C4A89EDA1B7BDEF000100C4B /* Products */;
+					ProjectRef = C4A89ED91B7BDEF000100C4B /* Charts.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				C402A8B61A3C78310081AFC9 /* NanoScan */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C4A89EDE1B7BDEF000100C4B /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = C4A89EDD1B7BDEF000100C4B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C402A8B51A3C78310081AFC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C402A8C91A3C78310081AFC9 /* Main.storyboard in Resources */,
+				C49158DD1AAB7F6200021B3C /* coffee.csv in Resources */,
+				C49158E71AAB80D100021B3C /* out_of_spec_aspirin.csv in Resources */,
+				C4275A651AAAC16700D9B66A /* Apple.csv in Resources */,
+				C49158DF1AAB7F8E00021B3C /* corn_starch.csv in Resources */,
+				C402A8CE1A3C78310081AFC9 /* LaunchScreen.xib in Resources */,
+				C49158E11AAB7FBA00021B3C /* Eucerin_Lotion.csv in Resources */,
+				C49158E51AAB809C00021B3C /* Glucose.csv in Resources */,
+				C49158D91AAB7EAC00021B3C /* Bell_Pepper.csv in Resources */,
+				C4F7F98C1B59CDB700D6C03B /* CHANGELOG in Resources */,
+				C49158EB1AAB811A00021B3C /* Sucrose.csv in Resources */,
+				C49158E91AAB80F800021B3C /* SRM2036.csv in Resources */,
+				C4F7F98D1B59CDB700D6C03B /* de.bitstadium.HockeySDK-iOS-3.7.1.docset in Resources */,
+				C49158E31AAB807400021B3C /* Flour.csv in Resources */,
+				C4F7F98F1B59CDB700D6C03B /* HockeySDK.xcconfig in Resources */,
+				C4F7F9901B59CDB700D6C03B /* HockeySDKResources.bundle in Resources */,
+				C49158BB1AAB769600021B3C /* BC.csv in Resources */,
+				C4F7F9921B59CDB700D6C03B /* LICENSE in Resources */,
+				C402A8CB1A3C78310081AFC9 /* Images.xcassets in Resources */,
+				C49158EF1AAB817000021B3C /* wonderbread.csv in Resources */,
+				C49158ED1AAB814800021B3C /* Tomato.csv in Resources */,
+				C49158B91AAB73A100021B3C /* aspirin.csv in Resources */,
+				C49158DB1AAB7F2C00021B3C /* CoconutOil.csv in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C48B6C671BA849FE0079F970 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C402A8B31A3C78310081AFC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4FF09181A83CAAF00B6E9BE /* DiagnosticViewController.m in Sources */,
+				C42DC41E1AFC241400256B80 /* ScannerViewController.m in Sources */,
+				C4353B3F1A9628360003B286 /* ConfigurationsViewController.m in Sources */,
+				C473D70B1A9B5C12009EE212 /* SettingsViewController.m in Sources */,
+				C45E6C691A3F3BD5006519D9 /* ScanViewTableViewCell.m in Sources */,
+				C4A89EF91B7BEB3E00100C4B /* BalloonMarker.swift in Sources */,
+				C402A8C01A3C78310081AFC9 /* AppDelegate.m in Sources */,
+				C402A8E51A3C7B5B0081AFC9 /* ScanViewController.m in Sources */,
+				C402A8C31A3C78310081AFC9 /* MasterViewController.m in Sources */,
+				C402A8BD1A3C78310081AFC9 /* main.m in Sources */,
+				C473D7081A9B5C01009EE212 /* InfoViewController.m in Sources */,
+				C45E6C6C1A3F460A006519D9 /* DeviceInformationViewController.m in Sources */,
+				C453D3151A9E130E000946A9 /* ScanDataViewController.m in Sources */,
+				C447973E1A7C4916003D7567 /* KSTNanoSDK.m in Sources */,
+				C42172841B1779AE00D27611 /* ScanConfigurationTableViewCell.m in Sources */,
+				C4275A631AAABC9800D9B66A /* KSTDataManager.m in Sources */,
+				C402A8C61A3C78310081AFC9 /* DetailViewController.m in Sources */,
+				C402A8E81A3C7FCD0081AFC9 /* ConfigureViewController.m in Sources */,
+				C4FF09151A827F4300B6E9BE /* DeviceStatusViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4A89EE21B7BDF1700100C4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = C4A89EE11B7BDF1700100C4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C402A8C71A3C78310081AFC9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C402A8C81A3C78310081AFC9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C402A8CC1A3C78310081AFC9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C402A8CD1A3C78310081AFC9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C402A8DB1A3C78310081AFC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Robert Kressin (92QQ8F2459)";
+				COPY_PHASE_STRIP = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DEBUG,
+					"$(inherited)",
+					ERROR,
+					WARNING,
+					NOTICE,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "88de9de6-4f5c-4dc6-89cc-773b8f94c219";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "NanoScan-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		C402A8DC1A3C78310081AFC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: KS Technologies (FYP9A66WY3)";
+				COPY_PHASE_STRIP = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = ERROR;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "3eec4d3f-4f76-47ef-8c84-8a194e0759e9";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "NanoScan-Bridging-Header.h";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C402A8DE1A3C78310081AFC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Robert Kressin (92QQ8F2459)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDKCrashOnly",
+				);
+				INFOPLIST_FILE = NanoScan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "88de9de6-4f5c-4dc6-89cc-773b8f94c219";
+				SWIFT_OBJC_BRIDGING_HEADER = "NanoScan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C402A8DF1A3C78310081AFC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: KS Technologies (FYP9A66WY3)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDKCrashOnly",
+				);
+				INFOPLIST_FILE = NanoScan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DLP_Spectrum_Library/src/Debug",
+					"$(PROJECT_DIR)/DLP_Spectrum_Library/src",
+					"$(PROJECT_DIR)/DLP_Spectrum_Library",
+					"$(PROJECT_DIR)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3eec4d3f-4f76-47ef-8c84-8a194e0759e9";
+				SWIFT_OBJC_BRIDGING_HEADER = "NanoScan-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C402A8B21A3C78310081AFC9 /* Build configuration list for PBXProject "NanoScan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C402A8DB1A3C78310081AFC9 /* Debug */,
+				C402A8DC1A3C78310081AFC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C402A8DD1A3C78310081AFC9 /* Build configuration list for PBXNativeTarget "NanoScan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C402A8DE1A3C78310081AFC9 /* Debug */,
+				C402A8DF1A3C78310081AFC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C402A8AF1A3C78310081AFC9 /* Project object */;
+}

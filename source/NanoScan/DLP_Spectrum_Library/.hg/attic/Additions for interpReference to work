@@ -1,0 +1,23 @@
+# HG changeset patch
+# User Eric Pruett <eric.pruett@ti.com>
+# Date 1424963434 21600
+# Parent  ab30c5205741b11d8a0c01b21a892523fa7c6313
+diff --git a/src/dlpspec_scan_col.h b/src/dlpspec_scan_col.h
+--- a/src/dlpspec_scan_col.h
++++ b/src/dlpspec_scan_col.h
+@@ -39,9 +39,12 @@
+ // Results format
+ typedef struct
+ {
+-	float		wavelength[COLUMN_FORMAT_ADC_DATA_LEN]
+-    int			intensity[COLUMN_FORMAT_ADC_DATA_LEN]
+-	int			length
++    SCAN_DATA_VERSION
++    SCAN_DATA_HEAD_0
++    scanConfigColumn    cfg;
++	float				wavelength[COLUMN_FORMAT_ADC_DATA_LEN]
++    int					data[COLUMN_FORMAT_ADC_DATA_LEN]
++	int					length
+ } scanResultsColumn;
+ 
+ 
