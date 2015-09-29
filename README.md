@@ -8,7 +8,7 @@ Please consider searching on the TODO pragma marks throughout this code to see w
 
 # Compatibility
 
-* Apple iOS 8.0+
+* Apple iOS 9.0+
 * Requires Bluetooth Low Energy (BLE) Radio
 * Requires TI NIRScanNano EVM running Firmware v1.1+
 
@@ -18,24 +18,16 @@ Please consider searching on the TODO pragma marks throughout this code to see w
 * KSTSpectrumLibrary.framework (1)
 * ios-charts (2)
 
-(1) Please check [Texas Instrument's website](http://www.ti.com) for the Spectrum C Library source.  Since TI is responsible for this source, we've provided it as an iOS framework for you here.
-
+(1) In order to get the source code for the Spectrum C Library, you must execute a Non-Disclosure Agreement directly with Texas Instruments.
 (2) This is an awesome open source project created by Daniel Cohen Gindi and is designed for building beautiful graphcs and charts for iOS.  Please see [Daniel's github repo](https://github.com/danielgindi/ios-charts) for more information.
-
-We use a build script to strip out the x86 pre-complied KSTSpectrumLibrary.framework binary.  Without this step, you will not be able to submit your app to the App Store. With it, however, you're able to build this source to the iOS Simulator (although the iOS Simulator does not support BLE connectivity).
-
-KST uses HockeyApp to distribute pre-releases and gather crash reports; our ID has been removed, and you may consider removing the HockeyApp SDK entirely for your app.
-
-KST uses Parse for easy Apple Push Notification support; our IDs have been removed, and you may consider removing both the Parse and Bolts SDKs entirely for your app.
 
 If you just want to test out the app and get data as fast as possible, consider just downloading the compiled version of this app, [available for free on the iOS App Store](https://itunes.apple.com/us/app/nirscan-nano/id999810838?mt=8) .
 
 # Version
 
-*  Version 1.1.0, Build 13
-*  iOS 8.4 SDK
-*  Xcode Version 6.4 (6E35b)
-* Swift v1.2
+*  Version 1.1.1, Build 14
+*  iOS 9.0 SDK
+*  Xcode Version 7.0 (7A220)
 
 # Contact Information
 

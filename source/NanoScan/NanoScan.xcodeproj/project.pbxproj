@@ -44,9 +44,8 @@
 		C49158EB1AAB811A00021B3C /* Sucrose.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158EA1AAB811A00021B3C /* Sucrose.csv */; };
 		C49158ED1AAB814800021B3C /* Tomato.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158EC1AAB814800021B3C /* Tomato.csv */; };
 		C49158EF1AAB817000021B3C /* wonderbread.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158EE1AAB817000021B3C /* wonderbread.csv */; };
-		C4A89EDF1B7BDF1700100C4B /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A89EDE1B7BDEF000100C4B /* Charts.framework */; };
-		C4A89EE01B7BDF1700100C4B /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4A89EDE1B7BDEF000100C4B /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C4A89EF91B7BEB3E00100C4B /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A89EF81B7BEB3E00100C4B /* BalloonMarker.swift */; };
+		C4B540FD1BBB05D000BA5362 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F899891BBB000D005A9CAF /* Charts.framework */; };
+		C4B540FE1BBB05D000BA5362 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4F899891BBB000D005A9CAF /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4F7F9511B59C35700D6C03B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F94F1B59C35700D6C03B /* Bolts.framework */; };
 		C4F7F9521B59C35700D6C03B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9501B59C35700D6C03B /* Parse.framework */; };
 		C4F7F9541B59C36900D6C03B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9531B59C36900D6C03B /* AudioToolbox.framework */; };
@@ -77,18 +76,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C4A89EDD1B7BDEF000100C4B /* PBXContainerItemProxy */ = {
+		C4B540FF1BBB05D000BA5362 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C4A89ED91B7BDEF000100C4B /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
-			remoteInfo = Charts;
-		};
-		C4A89EE11B7BDF1700100C4B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C4A89ED91B7BDEF000100C4B /* Charts.xcodeproj */;
+			containerPortal = C4F899841BBB000D005A9CAF /* Charts.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = Charts;
+		};
+		C4F899881BBB000D005A9CAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4F899841BBB000D005A9CAF /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
 			remoteInfo = Charts;
 		};
 /* End PBXContainerItemProxy section */
@@ -101,7 +100,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C48B6C661BA79D940079F970 /* KSTSpectrumLibrary.framework in Embed Frameworks */,
-				C4A89EE01B7BDF1700100C4B /* Charts.framework in Embed Frameworks */,
+				C4B540FE1BBB05D000BA5362 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,9 +160,7 @@
 		C49158EA1AAB811A00021B3C /* Sucrose.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sucrose.csv; sourceTree = "<group>"; };
 		C49158EC1AAB814800021B3C /* Tomato.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tomato.csv; sourceTree = "<group>"; };
 		C49158EE1AAB817000021B3C /* wonderbread.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wonderbread.csv; sourceTree = "<group>"; };
-		C4A89ED91B7BDEF000100C4B /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../ios-charts/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
 		C4A89EEE1B7BE56800100C4B /* NanoScan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NanoScan-Bridging-Header.h"; sourceTree = "<group>"; };
-		C4A89EF81B7BEB3E00100C4B /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BalloonMarker.swift; path = ../BalloonMarker.swift; sourceTree = "<group>"; };
 		C4F7F94F1B59C35700D6C03B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		C4F7F9501B59C35700D6C03B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		C4F7F9531B59C36900D6C03B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -190,6 +187,7 @@
 		C4F7F9891B59CDB700D6C03B /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		C4F7F98A1B59CDB700D6C03B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C4F7F98B1B59CDB700D6C03B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C4F899841BBB000D005A9CAF /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../ios-charts/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
 		C4FF09131A827F4300B6E9BE /* DeviceStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceStatusViewController.h; sourceTree = "<group>"; };
 		C4FF09141A827F4300B6E9BE /* DeviceStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceStatusViewController.m; sourceTree = "<group>"; };
 		C4FF09161A83CAAF00B6E9BE /* DiagnosticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticViewController.h; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 				C4F7F9791B59CB0A00D6C03B /* libc++.dylib in Frameworks */,
 				C4F7F9771B59CB0300D6C03B /* UIKit.framework in Frameworks */,
 				C4F7F9751B59CAF700D6C03B /* QuickLook.framework in Frameworks */,
-				C4A89EDF1B7BDF1700100C4B /* Charts.framework in Frameworks */,
 				C48B6C651BA79D940079F970 /* KSTSpectrumLibrary.framework in Frameworks */,
 				C48B6C641BA79B150079F970 /* KSTSpectrumLibrary.framework in Frameworks */,
 				C4F7F9731B59CAEC00D6C03B /* MobileCoreServices.framework in Frameworks */,
@@ -214,6 +211,7 @@
 				C4F7F9661B59C39700D6C03B /* libsqlite3.dylib in Frameworks */,
 				C4F7F98E1B59CDB700D6C03B /* HockeySDK.framework in Frameworks */,
 				C4F7F9641B59C39000D6C03B /* libz.dylib in Frameworks */,
+				C4B540FD1BBB05D000BA5362 /* Charts.framework in Frameworks */,
 				C4F7F9621B59C38B00D6C03B /* SystemConfiguration.framework in Frameworks */,
 				C4F7F95E1B59C38200D6C03B /* Security.framework in Frameworks */,
 				C4F7F95C1B59C37D00D6C03B /* QuartzCore.framework in Frameworks */,
@@ -233,7 +231,7 @@
 		C402A8AE1A3C78310081AFC9 = {
 			isa = PBXGroup;
 			children = (
-				C4A89CE91B7BD33000100C4B /* ios-charts */,
+				C4F899841BBB000D005A9CAF /* Charts.xcodeproj */,
 				C473D70D1A9B63E1009EE212 /* Sample Data */,
 				C4FF091A1A83DAA000B6E9BE /* NIRscan Nano SDK */,
 				C402A8B91A3C78310081AFC9 /* NanoScan (iOS) */,
@@ -281,7 +279,6 @@
 				C473D70A1A9B5C12009EE212 /* SettingsViewController.m */,
 				C402A8C41A3C78310081AFC9 /* DetailViewController.h */,
 				C402A8C51A3C78310081AFC9 /* DetailViewController.m */,
-				C4A89EF81B7BEB3E00100C4B /* BalloonMarker.swift */,
 				C402A8E31A3C7B5B0081AFC9 /* ScanViewController.h */,
 				C402A8E41A3C7B5B0081AFC9 /* ScanViewController.m */,
 				C45E6C671A3F3BD5006519D9 /* ScanViewTableViewCell.h */,
@@ -351,30 +348,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C4A89CE91B7BD33000100C4B /* ios-charts */ = {
-			isa = PBXGroup;
-			children = (
-				C4A89CF61B7BD38700100C4B /* Charts */,
-			);
-			name = "ios-charts";
-			sourceTree = "<group>";
-		};
-		C4A89CF61B7BD38700100C4B /* Charts */ = {
-			isa = PBXGroup;
-			children = (
-				C4A89ED91B7BDEF000100C4B /* Charts.xcodeproj */,
-			);
-			path = Charts;
-			sourceTree = "<group>";
-		};
-		C4A89EDA1B7BDEF000100C4B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C4A89EDE1B7BDEF000100C4B /* Charts.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C4F7F9671B59C92D00D6C03B /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +395,14 @@
 			path = HockeySDKCrashOnly;
 			sourceTree = "<group>";
 		};
+		C4F899851BBB000D005A9CAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4F899891BBB000D005A9CAF /* Charts.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C4FF09191A83CCF300B6E9BE /* ConfigureView */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,12 +443,12 @@
 				C402A8B41A3C78310081AFC9 /* Frameworks */,
 				C402A8B51A3C78310081AFC9 /* Resources */,
 				C4A89ED51B7BDBA200100C4B /* Embed Frameworks */,
-				C48B6C671BA849FE0079F970 /* ShellScript */,
+				C4B540FB1BBB031A00BA5362 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C4A89EE21B7BDF1700100C4B /* PBXTargetDependency */,
+				C4B541001BBB05D000BA5362 /* PBXTargetDependency */,
 			);
 			name = NanoScan;
 			productName = NanoScan;
@@ -508,8 +489,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C4A89EDA1B7BDEF000100C4B /* Products */;
-					ProjectRef = C4A89ED91B7BDEF000100C4B /* Charts.xcodeproj */;
+					ProductGroup = C4F899851BBB000D005A9CAF /* Products */;
+					ProjectRef = C4F899841BBB000D005A9CAF /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -520,11 +501,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C4A89EDE1B7BDEF000100C4B /* Charts.framework */ = {
+		C4F899891BBB000D005A9CAF /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = C4A89EDD1B7BDEF000100C4B /* PBXContainerItemProxy */;
+			remoteRef = C4F899881BBB000D005A9CAF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -563,7 +544,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C48B6C671BA849FE0079F970 /* ShellScript */ = {
+		C4B540FB1BBB031A00BA5362 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -574,7 +555,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name 'KSTSpectrumLibrary.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -588,7 +569,6 @@
 				C4353B3F1A9628360003B286 /* ConfigurationsViewController.m in Sources */,
 				C473D70B1A9B5C12009EE212 /* SettingsViewController.m in Sources */,
 				C45E6C691A3F3BD5006519D9 /* ScanViewTableViewCell.m in Sources */,
-				C4A89EF91B7BEB3E00100C4B /* BalloonMarker.swift in Sources */,
 				C402A8C01A3C78310081AFC9 /* AppDelegate.m in Sources */,
 				C402A8E51A3C7B5B0081AFC9 /* ScanViewController.m in Sources */,
 				C402A8C31A3C78310081AFC9 /* MasterViewController.m in Sources */,
@@ -608,10 +588,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C4A89EE21B7BDF1700100C4B /* PBXTargetDependency */ = {
+		C4B541001BBB05D000BA5362 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Charts;
-			targetProxy = C4A89EE11B7BDF1700100C4B /* PBXContainerItemProxy */;
+			targetProxy = C4B540FF1BBB05D000BA5362 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -676,7 +656,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "88de9de6-4f5c-4dc6-89cc-773b8f94c219";
+				PROVISIONING_PROFILE = "7b5c4a1f-6c77-4a71-b488-da1e6ce596d9";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "NanoScan-Bridging-Header.h";
 			};
@@ -728,7 +708,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Robert Kressin (92QQ8F2459)";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -737,14 +717,14 @@
 					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDKCrashOnly",
 				);
 				INFOPLIST_FILE = NanoScan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "88de9de6-4f5c-4dc6-89cc-773b8f94c219";
+				PROVISIONING_PROFILE = "7b5c4a1f-6c77-4a71-b488-da1e6ce596d9";
 				SWIFT_OBJC_BRIDGING_HEADER = "NanoScan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -758,7 +738,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: KS Technologies (FYP9A66WY3)";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -766,7 +746,7 @@
 					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDKCrashOnly",
 				);
 				INFOPLIST_FILE = NanoScan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
