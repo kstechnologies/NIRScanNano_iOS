@@ -14,19 +14,29 @@
 // Version format: MAJOR.MINOR.BUILD
 #define DLPSPEC_VERSION_MAJOR 1
 #define DLPSPEC_VERSION_MINOR 1
-#define DLPSPEC_VERSION_BUILD 4
+#define DLPSPEC_VERSION_BUILD 5
+
+// Data format versions
+#define DLPSPEC_CALIB_VER 1
+#define DLPSPEC_REFCAL_VER 3
+#define DLPSPEC_CFG_VER 1
 
 /* Version History
+
+1.1.5
+Fixed an issue where reference interpretation could fail if the scan config 
+being interpreted to has more datapoints than the data being interpreted from.
+ 
 1.1.4
 Fixed a deserialization error checking issue when loading data on targets which 
-pack the associated struct more tightly than the source system that seralized
-the data
+pack the associated struct more tightly than the source system that serialized
+the data.
 
 1.1.3
 Added workaround for DLP NIRscan Nano Tiva firmware ≤ 1.1.7 BLE transfer
 bug which was overwriting the first few bytes of the reference calibration
 matrix and scan reference calibration coefficients. Workaround can be disabled
-by #undef NANO_PRE_1_1_8_BLE_WORKAROUND
+by #undef NANO_PRE_1_1_8_BLE_WORKAROUND.
 
 1.1.2
 Changed MAX_PATTERNS_PER_SCAN to 624
@@ -47,9 +57,5 @@ Bugfixes in Hadamard in genPatDef, requiring both Tiva and host to match
 Hadamard support added
 
 */
-
-#define DLPSPEC_CALIB_VER 1
-#define DLPSPEC_REFCAL_VER 3
-#define DLPSPEC_CFG_VER 1
 
 #endif /* VERSION_H_ */

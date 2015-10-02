@@ -472,8 +472,10 @@ bool isForcingHumidityRead = YES;
 - (void) peripheral:(CBPeripheral *)aPeripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
 {
 #pragma mark TODO Update this to support iOS8.4 SDK or higher (deprecations)
+    /*
     [aPeripheral readRSSI];
     NSNumber *rssi = [aPeripheral RSSI];
+    */
     
     // We have found that the iOS BT Server can get unstable if you try to read values without a BLE4.0 Read property, try to set notifications without a BLE4.0 Notify property, etc.
     // So, we are very careful to make sure we enumerate the GATT Profile properly and avoid these types of mistakes.
@@ -721,7 +723,6 @@ bool isForcingHumidityRead = YES;
         else if ([aChar.UUID isEqual:[CBUUID UUIDWithString:kNanoCharacteristicGetScanDataUUIDString]])
         {
             NLog(@"Found Characteristic -> Get Scan Data [Write]");
-            WLog(@"RSSI: %@dBm", rssi);
         }
         else
         {

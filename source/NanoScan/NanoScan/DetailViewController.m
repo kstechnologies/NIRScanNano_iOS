@@ -369,12 +369,19 @@ float yMin;
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"NIRScan Nano"
-                                                        message:@"Your device does not support in-app email."
-                                                       delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"OK", @"Alert View, Option, OK")
-                                              otherButtonTitles:nil];
-        [alert show];
+        UIAlertController *alertController = [UIAlertController
+                                              alertControllerWithTitle:@"NIRScan Nano"
+                                              message:@"Your device does not support in-app email."
+                                              preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:@"OK"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                   }];
+        [alertController addAction:okAction];
+        [self presentViewController:alertController animated:YES completion:nil];
     }
 }
 

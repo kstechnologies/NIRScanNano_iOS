@@ -43,7 +43,7 @@ void dlpspec_copy_scanData_hdr_to_scanResults(const scanData *pScanData, scanRes
 DLPSPEC_ERR_CODE dlpspec_deserialize(void* struct_p, const size_t buffer_size, const BLOB_TYPES data_type);
 DLPSPEC_ERR_CODE dlpspec_serialize(const void* struct_p, void *pBuffer, const size_t buffer_size, const BLOB_TYPES data_type);
 void dlpspec_subtract_remove_dc_level(const scanData *pScanData, scanResults *pResults);
-DLPSPEC_ERR_CODE dlpspec_interpolate_int_wavelengths(const double *desired_nm, double *reference_nm, int *reference_int, const int num_entries);
+DLPSPEC_ERR_CODE dlpspec_interpolate_int_wavelengths(const double *desired_nm,  const int num_desired, double *reference_nm, int *reference_int, const int num_reference);
 DLPSPEC_ERR_CODE dlpspec_interpolate_double_wavelengths(const double *desired_nm, double *reference_nm, double *reference_int, const int num_entries);
 DLPSPEC_ERR_CODE dlpspec_matrix_mult(const double *a, const double*b, double*res, int p, int q, int r);
 DLPSPEC_ERR_CODE dlpspec_matrix_transpose(double*a, double*res, int row,int col);
