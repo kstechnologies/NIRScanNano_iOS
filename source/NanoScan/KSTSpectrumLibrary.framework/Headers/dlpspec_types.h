@@ -35,6 +35,10 @@ typedef enum
     CFG_TYPE            = 1,
     CALIB_TYPE          = 2,
     REF_CAL_MATRIX_TYPE = 3,
+	SLEW_CFG_HEAD_TYPE	= 4,
+	SLEW_CFG_SECT_TYPE	= 5,
+	SLEW_DATA_HEAD_TYPE = 6,
+	SLEW_DATA_ADC_TYPE  = 7,
 // User extended blob types: 128-255 reserved for customer expansion
 }BLOB_TYPES;
 

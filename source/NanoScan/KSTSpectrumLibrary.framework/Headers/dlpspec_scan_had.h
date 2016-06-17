@@ -109,9 +109,12 @@ extern "C" {
 #endif
 
 // Function prototypes
-DLPSPEC_ERR_CODE dlpspec_scan_had_interpret(const scanData *pScanData, scanResults *pResults);
-DLPSPEC_ERR_CODE dlpspec_scan_had_genPatDef(const scanConfig *pScanConfig, const calibCoeffs *pCoeffs, patDefHad *patDefH);
-int32_t dlpspec_scan_had_genPatterns(const patDefHad *patDefHad, const FrameBufferDescriptor *pFB);
+DLPSPEC_ERR_CODE dlpspec_scan_had_interpret(const uScanData *pScanData, 
+		scanResults *pResults);
+DLPSPEC_ERR_CODE dlpspec_scan_had_genPatDef(const scanConfig *pScanConfig, 
+		const calibCoeffs *pCoeffs, patDefHad *patDefH);
+int32_t dlpspec_scan_had_genPatterns(const patDefHad *patDefHad, 
+		const FrameBufferDescriptor *pFB, uint32_t startPattern);
 
 
 #ifdef __cplusplus      /* matches __cplusplus construct above */

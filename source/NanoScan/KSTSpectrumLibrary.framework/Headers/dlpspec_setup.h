@@ -18,8 +18,14 @@
 /** Maximum- DMD column number */
 #define MAX_DMD_COLUMN  853
 
-/** 
- * Scan data structure length. This should be no larger than the allocated
+/** Lower end of wavelength range supported in NIRscan Nano EVM */
+#define MIN_WAVELENGTH_NM	900
+
+/** Upper end of wavelength range supported in NIRscan Nano EVM */
+#define MAX_WAVELENGTH_NM	1700
+
+/**
+ * Max patterns supported. This should be no larger than the allocated
  * size of the pattern frame buffer in the embedded device.
  */
 #define MAX_PATTERNS_PER_SCAN 624

@@ -25,9 +25,11 @@
 		C453D3151A9E130E000946A9 /* ScanDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C453D3141A9E130E000946A9 /* ScanDataViewController.m */; };
 		C45E6C691A3F3BD5006519D9 /* ScanViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45E6C681A3F3BD5006519D9 /* ScanViewTableViewCell.m */; };
 		C45E6C6C1A3F460A006519D9 /* DeviceInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45E6C6B1A3F460A006519D9 /* DeviceInformationViewController.m */; };
+		C46501961D1379CA0045DCF8 /* KSTSpectrumLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46501951D1379CA0045DCF8 /* KSTSpectrumLibrary.framework */; };
+		C46501971D1379D30045DCF8 /* KSTSpectrumLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46501951D1379CA0045DCF8 /* KSTSpectrumLibrary.framework */; };
+		C46501981D1379D30045DCF8 /* KSTSpectrumLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C46501951D1379CA0045DCF8 /* KSTSpectrumLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C473D7081A9B5C01009EE212 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C473D7071A9B5C01009EE212 /* InfoViewController.m */; };
 		C473D70B1A9B5C12009EE212 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C473D70A1A9B5C12009EE212 /* SettingsViewController.m */; };
-		C48B6C651BA79D940079F970 /* KSTSpectrumLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48B6C631BA79B150079F970 /* KSTSpectrumLibrary.framework */; };
 		C49158B91AAB73A100021B3C /* aspirin.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158B81AAB73A100021B3C /* aspirin.csv */; };
 		C49158BB1AAB769600021B3C /* BC.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158BA1AAB769600021B3C /* BC.csv */; };
 		C49158D91AAB7EAC00021B3C /* Bell_Pepper.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158D81AAB7EAC00021B3C /* Bell_Pepper.csv */; };
@@ -44,6 +46,10 @@
 		C49158EF1AAB817000021B3C /* wonderbread.csv in Resources */ = {isa = PBXBuildFile; fileRef = C49158EE1AAB817000021B3C /* wonderbread.csv */; };
 		C4B540FD1BBB05D000BA5362 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F899891BBB000D005A9CAF /* Charts.framework */; };
 		C4B540FE1BBB05D000BA5362 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4F899891BBB000D005A9CAF /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4D013031D0B75BF006EE1D0 /* KSTSpectrumLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D013011D0B758C006EE1D0 /* KSTSpectrumLibrary.framework */; };
+		C4D013061D0B7A0A006EE1D0 /* KSTSpectrumLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D013051D0B7A0A006EE1D0 /* KSTSpectrumLibrary.framework */; };
+		C4D0130A1D0B9BEB006EE1D0 /* KSTSpectrumLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D013091D0B9BEB006EE1D0 /* KSTSpectrumLibrary.framework */; };
+		C4D0130F1D0B9D4D006EE1D0 /* KSTSpectrumLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D0130D1D0B9D0C006EE1D0 /* KSTSpectrumLibrary.framework */; };
 		C4F7F9511B59C35700D6C03B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F94F1B59C35700D6C03B /* Bolts.framework */; };
 		C4F7F9521B59C35700D6C03B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9501B59C35700D6C03B /* Parse.framework */; };
 		C4F7F9541B59C36900D6C03B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9531B59C36900D6C03B /* AudioToolbox.framework */; };
@@ -69,9 +75,6 @@
 		C4F7F9901B59CDB700D6C03B /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C4F7F9871B59CDB700D6C03B /* HockeySDKResources.bundle */; };
 		C4F7F9911B59CDB700D6C03B /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F7F9891B59CDB700D6C03B /* HockeySDK.framework */; };
 		C4F7F9921B59CDB700D6C03B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C4F7F98A1B59CDB700D6C03B /* LICENSE */; };
-		C4FEC78E1BBF177B00A166D8 /* KSTSpectrumLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4FEC78D1BBF177B00A166D8 /* KSTSpectrumLibrary.framework */; settings = {ASSET_TAGS = (); }; };
-		C4FEC78F1BBF178300A166D8 /* KSTSpectrumLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4FEC78D1BBF177B00A166D8 /* KSTSpectrumLibrary.framework */; };
-		C4FEC7901BBF178300A166D8 /* KSTSpectrumLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4FEC78D1BBF177B00A166D8 /* KSTSpectrumLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4FF09151A827F4300B6E9BE /* DeviceStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF09141A827F4300B6E9BE /* DeviceStatusViewController.m */; };
 		C4FF09181A83CAAF00B6E9BE /* DiagnosticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF09171A83CAAF00B6E9BE /* DiagnosticViewController.m */; };
 /* End PBXBuildFile section */
@@ -91,6 +94,20 @@
 			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
 			remoteInfo = Charts;
 		};
+		C4FE100C1CF16F250062C9B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4F899841BBB000D005A9CAF /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
+			remoteInfo = "Charts-TV";
+		};
+		C4FE100E1CF16F250062C9B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4F899841BBB000D005A9CAF /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteInfo = ChartsTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,7 +117,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C4FEC7901BBF178300A166D8 /* KSTSpectrumLibrary.framework in Embed Frameworks */,
+				C46501981D1379D30045DCF8 /* KSTSpectrumLibrary.framework in Embed Frameworks */,
 				C4B540FE1BBB05D000BA5362 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -142,11 +159,11 @@
 		C45E6C681A3F3BD5006519D9 /* ScanViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewTableViewCell.m; sourceTree = "<group>"; };
 		C45E6C6A1A3F460A006519D9 /* DeviceInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInformationViewController.h; sourceTree = "<group>"; };
 		C45E6C6B1A3F460A006519D9 /* DeviceInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInformationViewController.m; sourceTree = "<group>"; };
+		C46501951D1379CA0045DCF8 /* KSTSpectrumLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KSTSpectrumLibrary.framework; sourceTree = "<group>"; };
 		C473D7061A9B5C01009EE212 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		C473D7071A9B5C01009EE212 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		C473D7091A9B5C12009EE212 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		C473D70A1A9B5C12009EE212 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		C48B6C631BA79B150079F970 /* KSTSpectrumLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KSTSpectrumLibrary.framework; path = /Users/bob/Desktop/Development/github/NIRScanNano/source/NanoScan/KSTSpectrumLibrary.framework; sourceTree = "<absolute>"; };
 		C49158B81AAB73A100021B3C /* aspirin.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aspirin.csv; sourceTree = "<group>"; };
 		C49158BA1AAB769600021B3C /* BC.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BC.csv; sourceTree = "<group>"; };
 		C49158D81AAB7EAC00021B3C /* Bell_Pepper.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bell_Pepper.csv; sourceTree = "<group>"; };
@@ -162,6 +179,10 @@
 		C49158EC1AAB814800021B3C /* Tomato.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tomato.csv; sourceTree = "<group>"; };
 		C49158EE1AAB817000021B3C /* wonderbread.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wonderbread.csv; sourceTree = "<group>"; };
 		C4A89EEE1B7BE56800100C4B /* NanoScan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NanoScan-Bridging-Header.h"; sourceTree = "<group>"; };
+		C4D013011D0B758C006EE1D0 /* KSTSpectrumLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KSTSpectrumLibrary.framework; path = /Users/bob/Desktop/Development/github/NIRScanNano/source/NanoScan/KSTSpectrumLibrary.framework; sourceTree = "<absolute>"; };
+		C4D013051D0B7A0A006EE1D0 /* KSTSpectrumLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KSTSpectrumLibrary.framework; path = /Users/bob/Desktop/Development/github/NIRScanNano/source/NanoScan/KSTSpectrumLibrary.framework; sourceTree = "<absolute>"; };
+		C4D013091D0B9BEB006EE1D0 /* KSTSpectrumLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KSTSpectrumLibrary.framework; path = /Users/bob/Desktop/Development/github/NIRScanNano/source/NanoScan/KSTSpectrumLibrary.framework; sourceTree = "<absolute>"; };
+		C4D0130D1D0B9D0C006EE1D0 /* KSTSpectrumLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KSTSpectrumLibrary.framework; path = /Users/bob/Desktop/Development/github/NIRScanNano/source/NanoScan/KSTSpectrumLibrary.framework; sourceTree = "<absolute>"; };
 		C4F7F94F1B59C35700D6C03B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		C4F7F9501B59C35700D6C03B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		C4F7F9531B59C36900D6C03B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -189,7 +210,6 @@
 		C4F7F98A1B59CDB700D6C03B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C4F7F98B1B59CDB700D6C03B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C4F899841BBB000D005A9CAF /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../ios-charts/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
-		C4FEC78D1BBF177B00A166D8 /* KSTSpectrumLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KSTSpectrumLibrary.framework; sourceTree = "<group>"; };
 		C4FF09131A827F4300B6E9BE /* DeviceStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceStatusViewController.h; sourceTree = "<group>"; };
 		C4FF09141A827F4300B6E9BE /* DeviceStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceStatusViewController.m; sourceTree = "<group>"; };
 		C4FF09161A83CAAF00B6E9BE /* DiagnosticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticViewController.h; sourceTree = "<group>"; };
@@ -201,17 +221,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46501961D1379CA0045DCF8 /* KSTSpectrumLibrary.framework in Frameworks */,
+				C4D0130F1D0B9D4D006EE1D0 /* KSTSpectrumLibrary.framework in Frameworks */,
 				C4F7F9791B59CB0A00D6C03B /* libc++.dylib in Frameworks */,
 				C4F7F9771B59CB0300D6C03B /* UIKit.framework in Frameworks */,
 				C4F7F9751B59CAF700D6C03B /* QuickLook.framework in Frameworks */,
-				C48B6C651BA79D940079F970 /* KSTSpectrumLibrary.framework in Frameworks */,
-				C4FEC78E1BBF177B00A166D8 /* KSTSpectrumLibrary.framework in Frameworks */,
 				C4F7F9731B59CAEC00D6C03B /* MobileCoreServices.framework in Frameworks */,
+				C4D013061D0B7A0A006EE1D0 /* KSTSpectrumLibrary.framework in Frameworks */,
+				C4D013031D0B75BF006EE1D0 /* KSTSpectrumLibrary.framework in Frameworks */,
 				C4F7F9711B59CAE500D6C03B /* Foundation.framework in Frameworks */,
 				C4F7F96F1B59CADA00D6C03B /* CoreText.framework in Frameworks */,
 				C4F7F96D1B59CAD200D6C03B /* AssetsLibrary.framework in Frameworks */,
 				C4F7F9661B59C39700D6C03B /* libsqlite3.dylib in Frameworks */,
-				C4FEC78F1BBF178300A166D8 /* KSTSpectrumLibrary.framework in Frameworks */,
+				C4D0130A1D0B9BEB006EE1D0 /* KSTSpectrumLibrary.framework in Frameworks */,
 				C4F7F98E1B59CDB700D6C03B /* HockeySDK.framework in Frameworks */,
 				C4F7F9641B59C39000D6C03B /* libz.dylib in Frameworks */,
 				C4B540FD1BBB05D000BA5362 /* Charts.framework in Frameworks */,
@@ -221,6 +243,7 @@
 				C4F7F95A1B59C37800D6C03B /* CoreLocation.framework in Frameworks */,
 				C4F7F9581B59C37300D6C03B /* CoreGraphics.framework in Frameworks */,
 				C4F7F9561B59C36E00D6C03B /* CFNetwork.framework in Frameworks */,
+				C46501971D1379D30045DCF8 /* KSTSpectrumLibrary.framework in Frameworks */,
 				C4F7F9541B59C36900D6C03B /* AudioToolbox.framework in Frameworks */,
 				C4F7F9521B59C35700D6C03B /* Parse.framework in Frameworks */,
 				C4F7F9511B59C35700D6C03B /* Bolts.framework in Frameworks */,
@@ -234,6 +257,7 @@
 		C402A8AE1A3C78310081AFC9 = {
 			isa = PBXGroup;
 			children = (
+				C46501951D1379CA0045DCF8 /* KSTSpectrumLibrary.framework */,
 				C4F899841BBB000D005A9CAF /* Charts.xcodeproj */,
 				C473D70D1A9B63E1009EE212 /* Sample Data */,
 				C4FF091A1A83DAA000B6E9BE /* NIRscan Nano SDK */,
@@ -402,6 +426,8 @@
 			isa = PBXGroup;
 			children = (
 				C4F899891BBB000D005A9CAF /* Charts.framework */,
+				C4FE100D1CF16F250062C9B3 /* Charts.framework */,
+				C4FE100F1CF16F250062C9B3 /* ChartsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -430,7 +456,6 @@
 			children = (
 				C447973C1A7C4916003D7567 /* KSTNanoSDK.h */,
 				C447973D1A7C4916003D7567 /* KSTNanoSDK.m */,
-				C4FEC78D1BBF177B00A166D8 /* KSTSpectrumLibrary.framework */,
 			);
 			name = "NIRscan Nano SDK";
 			sourceTree = "<group>";
@@ -509,6 +534,20 @@
 			fileType = wrapper.framework;
 			path = Charts.framework;
 			remoteRef = C4F899881BBB000D005A9CAF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C4FE100D1CF16F250062C9B3 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = C4FE100C1CF16F250062C9B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C4FE100F1CF16F250062C9B3 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = C4FE100E1CF16F250062C9B3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -659,7 +698,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "ff176c96-fa32-43d2-887d-a541daaf8388";
+				PROVISIONING_PROFILE = "e771fff6-6c36-4cd4-b176-b471c1c1f514";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "NanoScan-Bridging-Header.h";
 			};
@@ -697,7 +736,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "3eec4d3f-4f76-47ef-8c84-8a194e0759e9";
+				PROVISIONING_PROFILE = "3454cce8-845a-4bd0-9e53-4e41114da334";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "NanoScan-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
@@ -727,7 +766,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ff176c96-fa32-43d2-887d-a541daaf8388";
+				PROVISIONING_PROFILE = "e771fff6-6c36-4cd4-b176-b471c1c1f514";
 				SWIFT_OBJC_BRIDGING_HEADER = "NanoScan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -742,6 +781,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: KS Technologies (FYP9A66WY3)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -759,7 +799,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3eec4d3f-4f76-47ef-8c84-8a194e0759e9";
+				PROVISIONING_PROFILE = "3454cce8-845a-4bd0-9e53-4e41114da334";
 				SWIFT_OBJC_BRIDGING_HEADER = "NanoScan-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

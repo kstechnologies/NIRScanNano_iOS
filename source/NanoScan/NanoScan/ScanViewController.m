@@ -371,6 +371,7 @@ NSMutableDictionary *_localScanDictionary;
 
 -(void)forceDisconnect
 {
+    /*
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@"Firmware Out of Date"
                                           message:@"You must update the firmware on your NIRScan Nano before continuing."
@@ -387,7 +388,7 @@ NSMutableDictionary *_localScanDictionary;
     [alertController addAction:okAction];
     
     [self presentViewController:alertController animated:YES completion:nil];
-    
+    */
 }
 
 -(void)didUpdateDataPercentComplete:(NSNotification *)aNotification

@@ -1,6 +1,6 @@
 /*****************************************************************************
 **
-**  Copyright (c) 2015 Texas Instruments Incorporated.
+**  Copyright (c) 2015-2016 Texas Instruments Incorporated.
 **
 ******************************************************************************
 **
@@ -12,49 +12,50 @@
 #define VERSION_H_
 
 // Version format: MAJOR.MINOR.BUILD
-#define DLPSPEC_VERSION_MAJOR 1
-#define DLPSPEC_VERSION_MINOR 1
-#define DLPSPEC_VERSION_BUILD 5
+#define DLPSPEC_VERSION_MAJOR 2
+#define DLPSPEC_VERSION_MINOR 0
+#define DLPSPEC_VERSION_BUILD 2
 
 // Data format versions
 #define DLPSPEC_CALIB_VER 1
 #define DLPSPEC_REFCAL_VER 3
 #define DLPSPEC_CFG_VER 1
 
-/* Version History
+/* ----------------------------------------------------------------------
+KNOWN ISSUES:
+----------------------------------------------------------------------
+The following Library functions are not re-entrant:-
+1. dlpspec_scan_genPatterns()
+2. dlpspec_scan_had_genPatDef()
+3. dlpspec_scan_genPatterns()
+4. dlpspec_scan_interpret()
+5. dlpspec_scan_had_interpret()
+6. dlpspec_scan_section_get_adc_data_range()
 
-1.1.5
-Fixed an issue where reference interpretation could fail if the scan config 
-being interpreted to has more datapoints than the data being interpreted from.
- 
-1.1.4
-Fixed a deserialization error checking issue when loading data on targets which 
-pack the associated struct more tightly than the source system that serialized
-the data.
+----------------------------------------------------------------------
+VERSION HISTORY:
+----------------------------------------------------------------------
 
-1.1.3
-Added workaround for DLP NIRscan Nano Tiva firmware ≤ 1.1.7 BLE transfer
-bug which was overwriting the first few bytes of the reference calibration
-matrix and scan reference calibration coefficients. Workaround can be disabled
-by #undef NANO_PRE_1_1_8_BLE_WORKAROUND.
+* 2.0.0 - Public release since 1.1.5. See below for new features and bug fixes.
+        - Scan Data structures modified to handle Slew Scans.
+        - Hadamard Scan Pattern count computation fixed.
+        - Hadamard Max Patterns calculation modified to report appropriate errors.
+        - Added validation to ensure that reference being interpreted fully covers the
+        - scan config it is being interpreted to.
+        - Added logic to skip interpolation if factory and scan configs match.
+* 1.1.5 - Fixed an issue where reference interpretation could fail if the scan config
+        - being interpreted to has more datapoints than the data being interpreted from.
+* 1.1.4 - Fixed a deserialization error checking issue when loading data on targets which
+        - pack the associated struct more tightly than the source system that serialized
+        - the data
+* 1.1.3 - Column scan generation speed increased for parity with Hadamard pattern generation
+        - More robust error checking added
+        - Error codes now returned for all applicable functions
+* 1.0.0 - Initial Public Release
 
-1.1.2
-Changed MAX_PATTERNS_PER_SCAN to 624
-Fixed klocworks reported issues
-Added scanData version check before interpreting data
+* 0.9   - Bugfixes in Hadamard in genPatDef, requiring both Tiva and host to match
 
-1.1
-Increased error reporting and input checking
-Column scan pattern generation increased to parity with Hadamard scans
-
-1.0
-Initial release
-
-0.9
-Bugfixes in Hadamard in genPatDef, requiring both Tiva and host to match
-
-0.8
-Hadamard support added
+* 0.8   - Hadamard support added
 
 */
 

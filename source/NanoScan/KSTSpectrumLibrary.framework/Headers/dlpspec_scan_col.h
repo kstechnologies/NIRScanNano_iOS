@@ -41,9 +41,12 @@ extern "C" {
 #endif
 
 // Function prototypes
-int32_t dlpspec_scan_col_genPatterns(const patDefCol *patDefCol, const FrameBufferDescriptor *pFB);
-DLPSPEC_ERR_CODE dlpspec_scan_col_genPatDef(const scanConfig *pScanConfig, const calibCoeffs *pCoeffs, patDefCol *patDef);
-DLPSPEC_ERR_CODE dlpspec_scan_col_interpret(const scanData *pScanData, scanResults *pResults);
+int32_t dlpspec_scan_col_genPatterns(const patDefCol *patDefCol,
+	   	const FrameBufferDescriptor *pFB, uint32_t startPattern);
+DLPSPEC_ERR_CODE dlpspec_scan_col_genPatDef(const scanConfig *pScanConfig, 
+		const calibCoeffs *pCoeffs, patDefCol *patDef);
+DLPSPEC_ERR_CODE dlpspec_scan_col_interpret(const uScanData *pScanData, 
+		scanResults *pResults);
 
 
 #ifdef __cplusplus      /* matches __cplusplus construct above */

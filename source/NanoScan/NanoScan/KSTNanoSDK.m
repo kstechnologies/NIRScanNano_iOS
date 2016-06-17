@@ -1385,13 +1385,12 @@ bool isForcingHumidityRead = YES;
             if( _scanDataBuffer.length == _scanDataByteCount )
             {
                 unsigned char *scanData = (unsigned char *)[_scanDataBuffer bytes];
-                int i;
+                int i, j;
                 int retVal;
                 
                 // There are some big, meaty sized comments in this section that really deserve a seperate compiler flag - great for troubleshooting!
 #pragma mark TODO Create a new compiler flag for these
                 // Print the raw scan data
-                /*
                  i = SCAN_DATA_BLOB_SIZE;
                  WLog(@"*** ADC_DATA_LEN = %d", ADC_DATA_LEN);
                  WLog(@"*** SCAN_DATA_BLOB_SIZE = %lu", SCAN_DATA_BLOB_SIZE);
@@ -1400,7 +1399,6 @@ bool isForcingHumidityRead = YES;
                  for(j = 0; j < (unsigned long)_scanDataBuffer.length; ++j)
                  printf("%02x ", ((uint8_t*)scanData)[j]);
                  WLog(@"***** scanData - BEFORE, End");
-                 */
                 //
                 
                 // Before pushing data to the Spectrum C Library, let's snapshot the Ref Cal Matrix Data; temporary fix until data corruption can be resolved
@@ -1409,6 +1407,8 @@ bool isForcingHumidityRead = YES;
                 
                 // 1 - CONVERT SCAN DATA TO SCAN RESULTS
                 scanResults finalScanResults;
+                NSLog(@"dlpspec_scan_interpret");
+                //                 void *scanDataByte = (void *)[_scanConfigurationBuffer bytes];
                 retVal = dlpspec_scan_interpret(scanData, _scanDataBuffer.length, &finalScanResults);
                 if( retVal < 0 )
                 {
@@ -1507,6 +1507,7 @@ bool isForcingHumidityRead = YES;
                 scanResults referenceResults;
                 
                 // Use the Ref Scan Coefficients and Matrix to calculate a final, scanned result.  &finalScanResults comes from the output of the dlpspec_scan_interpret and is scanData struct.
+                NSLog(@"dlpspec_scan_interpReference");
                 retVal = dlpspec_scan_interpReference(referenceCalCoefficients, _lockedDownReferenceCalCoefficientsBuffer.length, referenceCalMatrix, REF_CAL_MATRIX_BLOB_SIZE, &finalScanResults, &referenceResults);
                 if( retVal < 0 )
                 {
@@ -1636,8 +1637,9 @@ bool isForcingHumidityRead = YES;
                 
                 float fixedOverHeadPre = 0.5;
                 float fixedOverheadPost = 0.5;
-                int variableTime1 = finalScanResults.cfg.num_repeats + 1;
-                float variableTime2 = (float)ceilf((int)finalScanResults.cfg.num_patterns / 24.0);
+                int variableTime1 = finalScanResults.cfg.head.num_repeats + 1;
+                //float variableTime2 = (float)ceilf((int)finalScanResults.cfg.num_patterns / 24.0);
+                float variableTime2 = 800.0 / 24.0;     // HACK
                 float variableTime3 = 1.0/61.53;
                 float variableTime =  variableTime1 * variableTime2 * variableTime3;
                 float totalMeasurementTime = fixedOverHeadPre + variableTime + fixedOverheadPost;
@@ -1655,13 +1657,13 @@ bool isForcingHumidityRead = YES;
                 NSDictionary *sampleDictionary;
                 sampleDictionary = @{kKSTDataManagerFilename:[NSString stringWithFormat:@"%@_%@.csv", _stubName, formattedDateString],
                                      kKSTDataManagerSerialNumber:_KSTNanoSDKdeviceInfo[kKSTNanoSDKKeySerialNumber],
-                                     kKSTDataManagerKeyMethod:[NSString stringWithFormat:@"%s", finalScanResults.cfg.config_name],
+                                     kKSTDataManagerKeyMethod:[NSString stringWithFormat:@"%s", finalScanResults.cfg.head.config_name],
                                      kKSTDataManagerKeyTimestamp:dateFromString,
-                                     kKSTDataManagerSpectralRangeStart:[NSNumber numberWithInt:finalScanResults.cfg.wavelength_start_nm],
-                                     kKSTDataManagerSpectralRangeEnd:[NSNumber numberWithInt:finalScanResults.cfg.wavelength_end_nm],
-                                     kKSTDataManagerNumberOfWavelengthPoints:[NSNumber numberWithInt:finalScanResults.cfg.num_patterns],
-                                     kKSTDataManagerDigitalResolution:[NSNumber numberWithInt:finalScanResults.cfg.width_px],
-                                     kKSTDataManagerNumberOfAverages:[NSNumber numberWithInt:finalScanResults.cfg.num_repeats],
+                                     kKSTDataManagerSpectralRangeStart:[NSNumber numberWithInt:finalScanResults.wavelength[0]],
+                                     kKSTDataManagerSpectralRangeEnd:[NSNumber numberWithInt:finalScanResults.wavelength[864]],
+                                     kKSTDataManagerNumberOfWavelengthPoints:[NSNumber numberWithInt:finalScanResults.cfg.head.num_sections],
+                                     kKSTDataManagerDigitalResolution:[NSNumber numberWithInt:finalScanResults.wavelength[1]-finalScanResults.wavelength[0]],
+                                     kKSTDataManagerNumberOfAverages:[NSNumber numberWithInt:finalScanResults.cfg.head.num_repeats],
                                      kKSTDataManagerTotalMeasurementTime:[NSNumber numberWithFloat:totalMeasurementTime],
                                      kKSTDataManagerAbsorbance:absorbanceArray,
                                      kKSTDataManagerReflectance:reflectanceArray,
@@ -1699,6 +1701,7 @@ bool isForcingHumidityRead = YES;
             else
             {
                 float completionPercentage = 100.0*((float)_scanDataBuffer.length/(float)_scanDataByteCount);
+                NLog(@"Received Data - %2.0f%% Complete (%@)", completionPercentage, characteristic.value);
                 
                 NSDictionary *nameAndPacketDictionary = @{@"name":kKSTNanoSDKDownloadingData,
                                                           @"percentage":[NSNumber numberWithFloat:completionPercentage]};
@@ -1771,6 +1774,8 @@ bool isForcingHumidityRead = YES;
             _scanConfigurationBuffer = [NSMutableData data];
             NSData *byteCount = [characteristic.value subdataWithRange:NSMakeRange(1, 4)]; // note that i'm bypassing the packet count reference itself
             _scanConfigurationByteCount = *(int*)([byteCount bytes]);
+            NSLog(@"[diag] byte count = %d", _scanConfigurationByteCount);
+            //_scanConfigurationByteCount = 154; // 155 ... um no - crash ... 160 ... um no, too much
         }
         else
         {
@@ -1781,29 +1786,48 @@ bool isForcingHumidityRead = YES;
             
             [_scanConfigurationBuffer appendData:thisCharacteristicData];
             
+            NSLog(@"[diag]scanConfiguratinBuffer: %@", _scanConfigurationBuffer);
+            
             // only change state when you get everything
             if( _scanConfigurationBuffer.length == _scanConfigurationByteCount )
             {
+                //NSMutableData *fillerData = [NSMutableData dataWithData:_scanConfigurationBuffer];
+                NSUInteger originalSize = _scanConfigurationBuffer.length;
+
+               // [_scanConfigurationBuffer appendData:fillerData];
+                //[_scanConfigurationBuffer appendData:fillerData];
+                //[_scanConfigurationBuffer appendData:fillerData];
+
                 void *scanDataByte = (void *)[_scanConfigurationBuffer bytes];
+
+                NSLog(@"[diag] done! read the config struct (len=%u)", _scanConfigurationByteCount);
+                dlpspec_scan_read_configuration(scanDataByte, originalSize);
                 
-                dlpspec_scan_read_configuration(scanDataByte, _scanConfigurationBuffer.length);
-                scanConfig *aScanConfig = (scanConfig *)scanDataByte;
+                int poop = 0;
+                
+                for(poop = 0; poop < originalSize*4; ++poop)
+                    printf("%02x ", ((uint8_t*)scanDataByte)[poop]);
+                WLog(@"***** uScanConfig Raw Data - BEFORE, End");
+                
+                uScanConfig *aScanConfig = (uScanConfig *)scanDataByte;
                 
                 // save this off
-                uint16_t humidityAsUINT = aScanConfig->scanConfigIndex;
+                uint16_t humidityAsUINT = aScanConfig->scanCfg.scanConfigIndex;
                 NSData *humidityThresholdData = [NSData dataWithBytes:&humidityAsUINT length:sizeof(humidityAsUINT)];
                 
-                _scanConfigDataDictionary[kKSTDataManagerScanConfig_Type] = [NSNumber numberWithInt:aScanConfig->scan_type];
+                _scanConfigDataDictionary[kKSTDataManagerScanConfig_Type] = [NSNumber numberWithInt:aScanConfig->scanCfg.scan_type];
                 _scanConfigDataDictionary[kKSTDataManagerScanConfig_Index] = humidityThresholdData;
-                _scanConfigDataDictionary[kKSTDataManagerScanConfig_SerialNumber] = [NSString stringWithFormat:@"%s", aScanConfig->ScanConfig_serial_number];
-                _scanConfigDataDictionary[kKSTDataManagerScanConfig_ConfigName] = [NSString stringWithFormat:@"%s", aScanConfig->config_name];
-                _scanConfigDataDictionary[kKSTDataManagerScanConfig_WavelengthStart] = [NSNumber numberWithInt:aScanConfig->wavelength_start_nm];
-                _scanConfigDataDictionary[kKSTDataManagerScanConfig_WavelengthEnd] = [NSNumber numberWithInt:aScanConfig->wavelength_end_nm];
-                _scanConfigDataDictionary[kKSTDataManagerScanConfig_Width] = [NSNumber numberWithInt:aScanConfig->width_px];
-                _scanConfigDataDictionary[kKSTDataManagerScanConfig_NumPatterns] = [NSNumber numberWithInt:aScanConfig->num_patterns];
-                _scanConfigDataDictionary[kKSTDataManagerScanConfig_NumRepeats] = [NSNumber numberWithInt:aScanConfig->num_repeats];
+                _scanConfigDataDictionary[kKSTDataManagerScanConfig_SerialNumber] = [NSString stringWithFormat:@"%s", aScanConfig->scanCfg.ScanConfig_serial_number];
+                _scanConfigDataDictionary[kKSTDataManagerScanConfig_ConfigName] = [NSString stringWithFormat:@"%s", aScanConfig->scanCfg.config_name];
+                _scanConfigDataDictionary[kKSTDataManagerScanConfig_WavelengthStart] = [NSNumber numberWithInt:aScanConfig->scanCfg.wavelength_start_nm];
+                _scanConfigDataDictionary[kKSTDataManagerScanConfig_WavelengthEnd] = [NSNumber numberWithInt:aScanConfig->scanCfg.wavelength_end_nm];
+                _scanConfigDataDictionary[kKSTDataManagerScanConfig_Width] = [NSNumber numberWithInt:aScanConfig->scanCfg.width_px];
+                _scanConfigDataDictionary[kKSTDataManagerScanConfig_NumPatterns] = [NSNumber numberWithInt:aScanConfig->scanCfg.num_patterns];
+                _scanConfigDataDictionary[kKSTDataManagerScanConfig_NumRepeats] = [NSNumber numberWithInt:aScanConfig->scanCfg.num_repeats];
                 
                 NSMutableDictionary *savedDict = [_scanConfigDataDictionary mutableCopy];
+                
+                NSLog(@"[diag] savedDict %@", savedDict);
                 
                 if( _state == KSTNanoSDKStateConnecting )
                 {
@@ -1916,8 +1940,10 @@ bool isForcingHumidityRead = YES;
 
 -(void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
+    NSLog(@"[diag] didWriteValueForCharacteristic:%@ (error=%@)", characteristic.UUID.UUIDString, error.description);
     if( [characteristic.UUID isEqual:[CBUUID UUIDWithString:kNanoCharacteristicCurrentTimeUUIDString]] && _state == KSTNanoSDKStateInitializingTime )
     {
+        NSLog(@"[diag] changing state due to cal coefficients");
         [self changeToState:KSTNanoSDKStateFetchSpectrumCalCoefficients];
     }
 }
@@ -2851,7 +2877,7 @@ bool isForcingHumidityRead = YES;
                 dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(WRITE_DELAY * NSEC_PER_SEC));
                 dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
                                {
-                                   NLog(@"Write %@ to Char: %@ Serv: %@", scanConfigurationIndexData, aCharacteristic.UUID, aService.UUID);
+                                   NLog(@"[KSTNanoSDKGetScanConfigurationDataForIndex] Write %@ to Char: %@ Serv: %@", scanConfigurationIndexData, aCharacteristic.UUID, aService.UUID);
                                    [peripheral writeValue:scanConfigurationIndexData forCharacteristic:aCharacteristic type:CBCharacteristicWriteWithResponse ];
                                });
             }

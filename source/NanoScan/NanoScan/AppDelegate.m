@@ -28,8 +28,8 @@
     
     // Setup for APNS; KST uses Parse for easy integratoin of Apple's Push Notification Service.  So, you can either enter your own Pasre Application ID and Client Key or
     // remove their SDK and all lines of code in the app delegate that refer to Parse.
-    [Parse setApplicationId:@"changeMe"
-                  clientKey:@"changeMe"];
+    [Parse setApplicationId:@"Y7IFbJTxlkhSM1aaYDpCLxgUoDTp9m81KtilOkrn"
+                  clientKey:@"BhIxDHdfFwHEEHuU3zsTqobYGUkhmbVMHzhsxA87"];
     
     // Register for Push Notitications
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
@@ -41,7 +41,7 @@
     [application registerForRemoteNotifications];
     
     // Setup crash logs: KST uses HockeyApp for gathering crash reports, so you can either remove their SDK and the next three lines of code, or you can substitute your own ID info.
-    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"changeMe"];
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"e4e396ef370b6f680a6b53655f5c3a9b"];
     [[BITHockeyManager sharedHockeyManager] startManager];
     [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
     

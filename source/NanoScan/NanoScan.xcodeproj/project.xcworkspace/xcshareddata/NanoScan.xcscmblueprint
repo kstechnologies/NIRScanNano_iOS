@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "266B0C0CC22B67BB9BE52B1FB3330C19E547522B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "266B0C0CC22B67BB9BE52B1FB3330C19E547522B" : 0,
+    "9025163822AAEA7A2D8AC9210D0874A56F62B462" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C934F8E5-6A90-4B0C-9D0C-9143C4DEEEEF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "266B0C0CC22B67BB9BE52B1FB3330C19E547522B" : "NIRScanNano\/",
+    "9025163822AAEA7A2D8AC9210D0874A56F62B462" : "ios-charts\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NanoScan",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "source\/NanoScan\/NanoScan.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kstechnologies\/NIRScanNano_iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "266B0C0CC22B67BB9BE52B1FB3330C19E547522B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/danielgindi\/ios-charts.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9025163822AAEA7A2D8AC9210D0874A56F62B462"
+    }
+  ]
+}
