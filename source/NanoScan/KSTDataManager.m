@@ -290,21 +290,15 @@ static KSTDataManager *manager = nil;
 
 -(void)KSTDataManagerSetActiveScanConfigurationIndexToIndex:(NSData *)scanConfigIndexData
 {
-    NSLog(@"[DIAG] setting scan config to index %@", scanConfigIndexData);
-    NSLog(@"[DIAG] current scan config array %@", _scanConfigArray);
-
     int index = 0;
     while( index < _scanConfigArray.count )
     {
         NSDictionary *testScanConfigDictionary = _scanConfigArray[index];
         NSData *testScanConfigIndex = testScanConfigDictionary[kKSTDataManagerScanConfig_Index];
         
-        NSLog(@"[DIAG] comparing %@ to %@", testScanConfigIndex, scanConfigIndexData);
-        
         if( [testScanConfigIndex isEqualToData:scanConfigIndexData] )
         {
             _activeScanConfiguration = [NSNumber numberWithInt:index];
-            NSLog(@"[DIAG] Setting activeScanConfiguration to %@ (index=%@)", testScanConfigDictionary, _activeScanConfiguration);
         }
         
         index++;
