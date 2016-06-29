@@ -1391,6 +1391,7 @@ bool isForcingHumidityRead = YES;
                 // There are some big, meaty sized comments in this section that really deserve a seperate compiler flag - great for troubleshooting!
 #pragma mark TODO Create a new compiler flag for these
                 // Print the raw scan data
+                /*
                  i = SCAN_DATA_BLOB_SIZE;
                  WLog(@"*** ADC_DATA_LEN = %d", ADC_DATA_LEN);
                  WLog(@"*** SCAN_DATA_BLOB_SIZE = %lu", SCAN_DATA_BLOB_SIZE);
@@ -1399,6 +1400,7 @@ bool isForcingHumidityRead = YES;
                  for(j = 0; j < (unsigned long)_scanDataBuffer.length; ++j)
                  printf("%02x ", ((uint8_t*)scanData)[j]);
                  WLog(@"***** scanData - BEFORE, End");
+                 */
                 //
                 
                 // Before pushing data to the Spectrum C Library, let's snapshot the Ref Cal Matrix Data; temporary fix until data corruption can be resolved
@@ -1802,26 +1804,35 @@ bool isForcingHumidityRead = YES;
                     _scanConfigDataDictionary[kKSTDataManagerScanConfig_NumRepeats] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.head.num_repeats];
                     _scanConfigDataDictionary[kKSTDataManagerScanConfig_SerialNumber] = [NSString stringWithFormat:@"%s", aScanConfig->slewScanCfg.head.ScanConfig_serial_number];
 
+                    NSMutableArray *arrayOfScanConfigurations = [NSMutableArray array];
+                    NSMutableDictionary *aScanConfiguration = [NSMutableDictionary dictionary];
+
                     for(int i=0; i < aScanConfig->slewScanCfg.head.num_sections; i++)
                     {
-                        _scanConfigDataDictionary[kKSTDataManagerScanConfig_Type] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.section[i].section_scan_type];
-                        _scanConfigDataDictionary[kKSTDataManagerScanConfig_ConfigName] = [NSString stringWithFormat:@"%s", aScanConfig->scanCfg.config_name];
-                        _scanConfigDataDictionary[kKSTDataManagerScanConfig_WavelengthStart] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.section[i].wavelength_start_nm];
-                        _scanConfigDataDictionary[kKSTDataManagerScanConfig_WavelengthEnd] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.section[i].wavelength_end_nm];
-                        _scanConfigDataDictionary[kKSTDataManagerScanConfig_Width] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.section[i].width_px];
-                        _scanConfigDataDictionary[kKSTDataManagerScanConfig_NumPatterns] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.section[i].num_patterns];
+                        aScanConfiguration[kKSTDataManagerScanConfig_Type] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.section[i].section_scan_type];
+                        aScanConfiguration[kKSTDataManagerScanConfig_ConfigName] = [NSString stringWithFormat:@"%s", aScanConfig->scanCfg.config_name];
+                        aScanConfiguration[kKSTDataManagerScanConfig_WavelengthStart] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.section[i].wavelength_start_nm];
+                        aScanConfiguration[kKSTDataManagerScanConfig_WavelengthEnd] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.section[i].wavelength_end_nm];
+                        aScanConfiguration[kKSTDataManagerScanConfig_Width] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.section[i].width_px];
+                        aScanConfiguration[kKSTDataManagerScanConfig_NumPatterns] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.section[i].num_patterns];
+                        [arrayOfScanConfigurations addObject:aScanConfiguration];
                     }
+                    _scanConfigDataDictionary[kKSTDataManagerScanConfig_SectionsArray] = [NSArray arrayWithObject:aScanConfiguration];
                 }
                 else
                 {
                     NSLog(@"Is Not a Slew Scan Configuration");
-                    _scanConfigDataDictionary[kKSTDataManagerScanConfig_SerialNumber] = [NSString stringWithFormat:@"%s", aScanConfig->scanCfg.ScanConfig_serial_number];
+                    NSMutableDictionary *aScanConfiguration = [NSMutableDictionary dictionary];
+                    
+                    aScanConfiguration[kKSTDataManagerScanConfig_SerialNumber] = [NSString stringWithFormat:@"%s", aScanConfig->scanCfg.ScanConfig_serial_number];
 
-                    _scanConfigDataDictionary[kKSTDataManagerScanConfig_WavelengthStart] = [NSNumber numberWithInt:aScanConfig->scanCfg.wavelength_start_nm];
-                    _scanConfigDataDictionary[kKSTDataManagerScanConfig_WavelengthEnd] = [NSNumber numberWithInt:aScanConfig->scanCfg.wavelength_end_nm];
-                    _scanConfigDataDictionary[kKSTDataManagerScanConfig_Width] = [NSNumber numberWithInt:aScanConfig->scanCfg.width_px];
-                    _scanConfigDataDictionary[kKSTDataManagerScanConfig_NumPatterns] = [NSNumber numberWithInt:aScanConfig->scanCfg.num_patterns];
-                    _scanConfigDataDictionary[kKSTDataManagerScanConfig_NumRepeats] = [NSNumber numberWithInt:aScanConfig->scanCfg.num_repeats];
+                    aScanConfiguration[kKSTDataManagerScanConfig_WavelengthStart] = [NSNumber numberWithInt:aScanConfig->scanCfg.wavelength_start_nm];
+                    aScanConfiguration[kKSTDataManagerScanConfig_WavelengthEnd] = [NSNumber numberWithInt:aScanConfig->scanCfg.wavelength_end_nm];
+                    aScanConfiguration[kKSTDataManagerScanConfig_Width] = [NSNumber numberWithInt:aScanConfig->scanCfg.width_px];
+                    aScanConfiguration[kKSTDataManagerScanConfig_NumPatterns] = [NSNumber numberWithInt:aScanConfig->scanCfg.num_patterns];
+                    aScanConfiguration[kKSTDataManagerScanConfig_NumRepeats] = [NSNumber numberWithInt:aScanConfig->scanCfg.num_repeats];
+                    
+                    _scanConfigDataDictionary[kKSTDataManagerScanConfig_SectionsArray] = [NSArray arrayWithObject:aScanConfiguration];
                 }
                 
                 // save this off

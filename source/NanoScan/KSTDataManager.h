@@ -49,6 +49,8 @@ static NSString *kKSTDataManagerScanConfig_Width = @"kKSTDataManagerScanConfig_W
 static NSString *kKSTDataManagerScanConfig_NumPatterns = @"kKSTDataManagerScanConfig_NumPatterns";
 static NSString *kKSTDataManagerScanConfig_NumRepeats = @"kKSTDataManagerScanConfig_NumRepeats";
 
+static NSString *kKSTDataManagerScanConfig_SectionsArray = @"kKSTDataManagerScanConfig_SectionsArray";
+
 #pragma mark - Delegate Methods
 @protocol KSTDataManagerDelegate <NSObject>
 -(void)KSTDataManagerDidAddNewFile;
