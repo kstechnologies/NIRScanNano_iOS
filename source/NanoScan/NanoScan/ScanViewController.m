@@ -20,10 +20,10 @@ typedef enum
     kDetailRowContinuousScan,
     kDetailRowMethod,
     kDetailRowTimestamp,
-    kDetailRowSpectralRangeStart,
-    kDetailRowSpectrialRangeEnd,
-    kDetailRowNumberOfWavelengthPoints,
-    kDetailRowDigitalResolution,
+    //kDetailRowSpectralRangeStart,
+    //kDetailRowSpectrialRangeEnd,
+    //kDetailRowNumberOfWavelengthPoints,
+    //kDetailRowDigitalResolution,
     kDetailRowNumberOfScansToAverage,
     kDetailRowTotalMeasurementTime
 } kDetailRow;
@@ -467,8 +467,6 @@ NSMutableDictionary *_localScanDictionary;
     _statusLabel.hidden = YES;
     _progressView.hidden = YES;
     
-    NSLog(@"TEST _dataManager.activeScanConfiguration %@ %@", _dataManager.activeScanConfiguration, _dataManager.scanConfigArray);
-    
     [self.scanTableView reloadData];
 }
 
@@ -603,6 +601,8 @@ NSMutableDictionary *_localScanDictionary;
             
             cell.accessoryView = _textField;
             
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            
         } break;
             
         case kDetailRowSDCardSave:
@@ -611,6 +611,8 @@ NSMutableDictionary *_localScanDictionary;
             cell.detailTextLabel.text = @"";
             
             cell.accessoryView = _switchView;
+            
+            cell.accessoryType = UITableViewCellAccessoryNone;
             
         } break;
             
@@ -621,6 +623,8 @@ NSMutableDictionary *_localScanDictionary;
             
             cell.accessoryView = _continuousScanSwitchView;
             
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            
         } break;
             
         case kDetailRowiOSSave:
@@ -630,19 +634,28 @@ NSMutableDictionary *_localScanDictionary;
             
             cell.accessoryView = _iOSSwitchView;
             
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            
         } break;
             
         case kDetailRowMethod:
         {
             cell.textLabel.text = @"Scan Configuration";
+            cell.detailTextLabel.text = @"";
             
-            if( _dataManager.activeScanConfiguration.intValue >= 0 && (int)_dataManager.scanConfigArray.count > 0 )
+            NSLog(@"TEST _dataManager.activeScanConfiguration %@ %@", _dataManager.activeScanConfiguration, _dataManager.scanConfigArray);
+
+            if( _dataManager.activeScanConfiguration )
             {
                 NSDictionary *activeConfiguration = _dataManager.scanConfigArray[_dataManager.activeScanConfiguration.intValue];
-                cell.detailTextLabel.text = activeConfiguration[kKSTDataManagerScanConfig_ConfigName];
+                NSLog(@"[diag] selected: %@", activeConfiguration);
+               cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }
             else
-                cell.detailTextLabel.text = @"--";
+            {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+
         } break;
             
         case kDetailRowTimestamp:
@@ -658,6 +671,7 @@ NSMutableDictionary *_localScanDictionary;
             
         } break;
             
+            /*
         case kDetailRowSpectralRangeStart:
         {
             cell.textLabel.text = @"Spectral Range Start";
@@ -685,7 +699,8 @@ NSMutableDictionary *_localScanDictionary;
                 cell.detailTextLabel.text = @"--";
             }
         } break;
-            
+             */
+            /*
         case kDetailRowSpectrialRangeEnd:
         {
             cell.textLabel.text = @"Spectral Range End";
@@ -713,7 +728,8 @@ NSMutableDictionary *_localScanDictionary;
                 cell.detailTextLabel.text = @"--";
             }
         } break;
-            
+            */
+            /*
         case kDetailRowNumberOfWavelengthPoints:
         {
             cell.textLabel.text = @"Number of Wavelength Points";
@@ -727,7 +743,8 @@ NSMutableDictionary *_localScanDictionary;
                 cell.detailTextLabel.text = @"--";
             
         } break;
-            
+            */
+            /*
         case kDetailRowDigitalResolution:
         {
             cell.textLabel.text = @"Digital Resolution";
@@ -744,7 +761,8 @@ NSMutableDictionary *_localScanDictionary;
                 cell.detailTextLabel.text = @"--";
 
         } break;
-            
+            */
+
         case kDetailRowNumberOfScansToAverage:
         {
             cell.textLabel.text = @"Number of Scans to Average";
@@ -774,20 +792,20 @@ NSMutableDictionary *_localScanDictionary;
             break;
     }
     
-    cell.accessoryType = UITableViewCellAccessoryNone;
-    //cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.userInteractionEnabled = YES;
     self.navigationItem.rightBarButtonItem.enabled = YES;
     cell.detailTextLabel.hidden = NO;
-    //cell.contentView.backgroundColor = [UIColor clearColor];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if( indexPath.row == kDetailRowMethod )
+    {
+        [self performSegueWithIdentifier:@"showScanConfiguration" sender:self];
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

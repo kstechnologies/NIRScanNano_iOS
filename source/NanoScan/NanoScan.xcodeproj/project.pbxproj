@@ -16,6 +16,7 @@
 		C402A8CE1A3C78310081AFC9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C402A8CC1A3C78310081AFC9 /* LaunchScreen.xib */; };
 		C402A8E51A3C7B5B0081AFC9 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C402A8E41A3C7B5B0081AFC9 /* ScanViewController.m */; };
 		C402A8E81A3C7FCD0081AFC9 /* ConfigureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C402A8E71A3C7FCD0081AFC9 /* ConfigureViewController.m */; };
+		C4186ECD1D248C1700D1CC38 /* ScanConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4186ECC1D248C1700D1CC38 /* ScanConfigurationViewController.m */; };
 		C42172841B1779AE00D27611 /* ScanConfigurationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C42172831B1779AE00D27611 /* ScanConfigurationTableViewCell.m */; };
 		C4275A631AAABC9800D9B66A /* KSTDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4275A621AAABC9800D9B66A /* KSTDataManager.m */; };
 		C4275A651AAAC16700D9B66A /* Apple.csv in Resources */ = {isa = PBXBuildFile; fileRef = C4275A641AAAC16700D9B66A /* Apple.csv */; };
@@ -142,6 +143,8 @@
 		C402A8E41A3C7B5B0081AFC9 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		C402A8E61A3C7FCD0081AFC9 /* ConfigureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigureViewController.h; sourceTree = "<group>"; };
 		C402A8E71A3C7FCD0081AFC9 /* ConfigureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigureViewController.m; sourceTree = "<group>"; };
+		C4186ECB1D248C1700D1CC38 /* ScanConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanConfigurationViewController.h; sourceTree = "<group>"; };
+		C4186ECC1D248C1700D1CC38 /* ScanConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanConfigurationViewController.m; sourceTree = "<group>"; };
 		C42172821B1779AE00D27611 /* ScanConfigurationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanConfigurationTableViewCell.h; sourceTree = "<group>"; };
 		C42172831B1779AE00D27611 /* ScanConfigurationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanConfigurationTableViewCell.m; sourceTree = "<group>"; };
 		C4275A611AAABC9800D9B66A /* KSTDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSTDataManager.h; path = ../KSTDataManager.h; sourceTree = "<group>"; };
@@ -308,6 +311,8 @@
 				C402A8C51A3C78310081AFC9 /* DetailViewController.m */,
 				C402A8E31A3C7B5B0081AFC9 /* ScanViewController.h */,
 				C402A8E41A3C7B5B0081AFC9 /* ScanViewController.m */,
+				C4186ECB1D248C1700D1CC38 /* ScanConfigurationViewController.h */,
+				C4186ECC1D248C1700D1CC38 /* ScanConfigurationViewController.m */,
 				C45E6C671A3F3BD5006519D9 /* ScanViewTableViewCell.h */,
 				C45E6C681A3F3BD5006519D9 /* ScanViewTableViewCell.m */,
 				C402A8E61A3C7FCD0081AFC9 /* ConfigureViewController.h */,
@@ -613,6 +618,7 @@
 				C45E6C691A3F3BD5006519D9 /* ScanViewTableViewCell.m in Sources */,
 				C402A8C01A3C78310081AFC9 /* AppDelegate.m in Sources */,
 				C402A8E51A3C7B5B0081AFC9 /* ScanViewController.m in Sources */,
+				C4186ECD1D248C1700D1CC38 /* ScanConfigurationViewController.m in Sources */,
 				C402A8C31A3C78310081AFC9 /* MasterViewController.m in Sources */,
 				C402A8BD1A3C78310081AFC9 /* main.m in Sources */,
 				C473D7081A9B5C01009EE212 /* InfoViewController.m in Sources */,

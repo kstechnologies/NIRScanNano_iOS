@@ -1799,16 +1799,16 @@ bool isForcingHumidityRead = YES;
                 
                 if( aScanConfig->scanCfg.scan_type == SLEW_TYPE )
                 {
-                    NSLog(@"Contains a Slew Scan Configuration");
+                    NSLog(@"Contains a Slew Scan Configuration - sections = %d", aScanConfig->slewScanCfg.head.num_sections);
                     
                     _scanConfigDataDictionary[kKSTDataManagerScanConfig_NumRepeats] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.head.num_repeats];
                     _scanConfigDataDictionary[kKSTDataManagerScanConfig_SerialNumber] = [NSString stringWithFormat:@"%s", aScanConfig->slewScanCfg.head.ScanConfig_serial_number];
 
                     NSMutableArray *arrayOfScanConfigurations = [NSMutableArray array];
-                    NSMutableDictionary *aScanConfiguration = [NSMutableDictionary dictionary];
 
                     for(int i=0; i < aScanConfig->slewScanCfg.head.num_sections; i++)
                     {
+                        NSMutableDictionary *aScanConfiguration = [NSMutableDictionary dictionary];
                         aScanConfiguration[kKSTDataManagerScanConfig_Type] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.section[i].section_scan_type];
                         aScanConfiguration[kKSTDataManagerScanConfig_ConfigName] = [NSString stringWithFormat:@"%s", aScanConfig->scanCfg.config_name];
                         aScanConfiguration[kKSTDataManagerScanConfig_WavelengthStart] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.section[i].wavelength_start_nm];
@@ -1817,7 +1817,7 @@ bool isForcingHumidityRead = YES;
                         aScanConfiguration[kKSTDataManagerScanConfig_NumPatterns] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.section[i].num_patterns];
                         [arrayOfScanConfigurations addObject:aScanConfiguration];
                     }
-                    _scanConfigDataDictionary[kKSTDataManagerScanConfig_SectionsArray] = [NSArray arrayWithObject:aScanConfiguration];
+                    _scanConfigDataDictionary[kKSTDataManagerScanConfig_SectionsArray] = arrayOfScanConfigurations;
                 }
                 else
                 {
