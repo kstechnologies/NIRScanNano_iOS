@@ -27,14 +27,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Current Scan Configuration";
+    self.title = @"Active Scan Configuration";
     
     _dataManager = [KSTDataManager manager];
-    NSLog(@"TEST _dataManager.activeScanConfiguration %@ %@", _dataManager.activeScanConfiguration, _dataManager.scanConfigArray);
     
     if( _dataManager.activeScanConfiguration )
     {
         self.activeConfiguration = _dataManager.scanConfigArray[_dataManager.activeScanConfiguration.intValue];
+        
+        NSArray *arrayOfDictionary = self.activeConfiguration[kKSTDataManagerScanConfig_SectionsArray];
+        NSDictionary *aSingleSlewScanConfiguration = arrayOfDictionary[0];
+        
+        NSString *configName = [NSString stringWithFormat:@"%@", aSingleSlewScanConfiguration[kKSTDataManagerScanConfig_ConfigName]];
+        self.title = [NSString stringWithFormat:@"Scan Config: %@", configName];
     }
     
 }
@@ -61,7 +66,6 @@
     NSLog(@"[debug] full array - %@", arrayOfDictionary);
     
     NSDictionary *aSingleSlewScanConfiguration = arrayOfDictionary[indexPath.row];
-    NSLog(@"[debug] single %@", aSingleSlewScanConfiguration);
 
     NSNumber *spatialPref = [[NSUserDefaults standardUserDefaults] objectForKey:kNanoSettingsSpatialPreference];
     float testX = [aSingleSlewScanConfiguration[kKSTDataManagerScanConfig_WavelengthStart] floatValue];
@@ -91,7 +95,6 @@
     
     cell.wavelengthEnd.text = [NSString stringWithFormat:@"%2.1f", testX];
     cell.numPatterns.text = [NSString stringWithFormat:@"%@", aSingleSlewScanConfiguration[kKSTDataManagerScanConfig_NumPatterns]];
-    cell.configName.text = [NSString stringWithFormat:@"%@", aSingleSlewScanConfiguration[kKSTDataManagerScanConfig_ConfigName]];
     cell.width.text = [NSString stringWithFormat:@"%@", aSingleSlewScanConfiguration[kKSTDataManagerScanConfig_Width]];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

@@ -1799,8 +1799,7 @@ bool isForcingHumidityRead = YES;
                 
                 if( aScanConfig->scanCfg.scan_type == SLEW_TYPE )
                 {
-                    NSLog(@"Contains a Slew Scan Configuration - sections = %d", aScanConfig->slewScanCfg.head.num_sections);
-                    
+                    // Slew Scan Configuration
                     _scanConfigDataDictionary[kKSTDataManagerScanConfig_NumRepeats] = [NSNumber numberWithInt:aScanConfig->slewScanCfg.head.num_repeats];
                     _scanConfigDataDictionary[kKSTDataManagerScanConfig_SerialNumber] = [NSString stringWithFormat:@"%s", aScanConfig->slewScanCfg.head.ScanConfig_serial_number];
 
@@ -1821,7 +1820,7 @@ bool isForcingHumidityRead = YES;
                 }
                 else
                 {
-                    NSLog(@"Is Not a Slew Scan Configuration");
+                    // Not a Slew Scan Configuration
                     NSMutableDictionary *aScanConfiguration = [NSMutableDictionary dictionary];
                     
                     aScanConfiguration[kKSTDataManagerScanConfig_SerialNumber] = [NSString stringWithFormat:@"%s", aScanConfig->scanCfg.ScanConfig_serial_number];

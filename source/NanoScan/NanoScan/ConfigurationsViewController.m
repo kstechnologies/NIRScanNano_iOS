@@ -30,7 +30,6 @@
     //Remove blank cells at the bottom of the table view
     UIView *footer = [[UIView alloc] initWithFrame:CGRectZero];
     _configurationTableView.tableFooterView = footer;
-    
     _configurationTableView.hidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUpdateDataPercentComplete:) name:kKSTNanoSDKDownloadingData object:nil];
@@ -94,44 +93,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ScanConfigurationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    NSMutableDictionary *aScanConfig = [_dataManager.scanConfigArray objectAtIndex:indexPath.row];
-    
-    cell.serialNumber.text = aScanConfig[kKSTDataManagerScanConfig_SerialNumber];
-    cell.configName.text = [NSString stringWithFormat:@"%@", aScanConfig[kKSTDataManagerScanConfig_ConfigName]];
-    
-    cell.type.text = [NSString stringWithFormat:@"%@", aScanConfig[kKSTDataManagerScanConfig_Type]];
-    cell.index.text = [NSString stringWithFormat:@"%@", aScanConfig[kKSTDataManagerScanConfig_Index]];
-    
-    NSNumber *spatialPref = [[NSUserDefaults standardUserDefaults] objectForKey:kNanoSettingsSpatialPreference];
-    float testX = [aScanConfig[kKSTDataManagerScanConfig_WavelengthStart] floatValue];
-    
-    if( spatialPref.intValue == kSpatialPreferenceWavenumber )
-    {
-        testX = 10000000.0 / testX; // converts to cm-1
-        cell.wavelengthStart.text = [NSString stringWithFormat:@"%2.1f cm-1", testX];
-    }
-    else
-    {
-        cell.wavelengthStart.text = [NSString stringWithFormat:@"%2.1f nm", testX];
-    }
+    NSArray *arrayOfConfigurations = _dataManager.scanConfigArray;
+    NSDictionary *aSingleConfiguration = arrayOfConfigurations[indexPath.row];
+    NSArray *arrayOfDictionary = aSingleConfiguration[kKSTDataManagerScanConfig_SectionsArray];
 
-    float testY = [aScanConfig[kKSTDataManagerScanConfig_WavelengthEnd] floatValue];
+    NSDictionary *aSingleElement = arrayOfDictionary[0];
+    NSString *configName = aSingleElement[kKSTDataManagerScanConfig_ConfigName];
     
-    if( spatialPref.intValue == kSpatialPreferenceWavenumber )
-    {
-        testY = 10000000.0 / testY; // converts to cm-1
-        cell.wavelengthEnd.text = [NSString stringWithFormat:@"%2.1f cm-1", testY];
-    }
-    else
-    {
-        cell.wavelengthEnd.text = [NSString stringWithFormat:@"%2.1f nm", testY];
-    }
-    
-    cell.width.text = [NSString stringWithFormat:@"%@ nm", aScanConfig[kKSTDataManagerScanConfig_Width]];
-    cell.numPatterns.text = [NSString stringWithFormat:@"%@", aScanConfig[kKSTDataManagerScanConfig_NumPatterns]];
-    cell.numRepeats.text = [NSString stringWithFormat:@"%@", aScanConfig[kKSTDataManagerScanConfig_NumRepeats]];
+    cell.textLabel.text = configName;
     
     cell.userInteractionEnabled = YES;
     
@@ -156,15 +127,5 @@
     [self.configurationTableView reloadData];
 
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end
