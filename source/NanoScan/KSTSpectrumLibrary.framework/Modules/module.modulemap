@@ -1,6 +1,0 @@
-framework module KSTSpectrumLibrary {
-  umbrella header "KSTSpectrumLibrary.h"
-
-  export *
-  module * { export * }
-}

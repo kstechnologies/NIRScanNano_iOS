@@ -8,9 +8,6 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
-#import <Parse/Parse.h>
-#import <HockeySDK/HockeySDK.h>
-
 
 //#import "KSTNanoSDK.h"
 #import "KSTDataManager.h"
@@ -26,11 +23,6 @@
 {
     [[KSTDataManager manager] KSTDataManagerInitialize];
     
-    // Setup for APNS; KST uses Parse for easy integratoin of Apple's Push Notification Service.  So, you can either enter your own Pasre Application ID and Client Key or
-    // remove their SDK and all lines of code in the app delegate that refer to Parse.
-    [Parse setApplicationId:@"Y7IFbJTxlkhSM1aaYDpCLxgUoDTp9m81KtilOkrn"
-                  clientKey:@"BhIxDHdfFwHEEHuU3zsTqobYGUkhmbVMHzhsxA87"];
-    
     // Register for Push Notitications
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |
@@ -39,11 +31,6 @@
                                                                              categories:nil];
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
-    
-    // Setup crash logs: KST uses HockeyApp for gathering crash reports, so you can either remove their SDK and the next three lines of code, or you can substitute your own ID info.
-    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"e4e396ef370b6f680a6b53655f5c3a9b"];
-    [[BITHockeyManager sharedHockeyManager] startManager];
-    [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
     
     NSString *versionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     NSString *bundleString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
@@ -54,14 +41,9 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    // Store the deviceToken in the current installation and save it to Parse.
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:deviceToken];
-    [currentInstallation saveInBackground];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [PFPush handlePush:userInfo];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

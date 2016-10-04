@@ -116,8 +116,8 @@ NSMutableDictionary *_localScanDictionary;
     _chartView.pinchZoomEnabled = YES;
     _chartView.drawGridBackgroundEnabled = NO;
     _chartView.xAxis.labelPosition = XAxisLabelPositionBottom;
-    _chartView.xAxis.spaceBetweenLabels = 5;
-    _chartView.maxVisibleValueCount = 25;
+    //_chartView.xAxis.spaceBetweenLabels = 5;
+    _chartView.maxVisibleCount = 25;
     
     // x-axis limit line
     ChartLimitLine *llXAxis = [[ChartLimitLine alloc] initWithLimit:0.0 label:@"0.0"];
@@ -129,7 +129,7 @@ NSMutableDictionary *_localScanDictionary;
     
     ChartYAxis *leftAxis = _chartView.leftAxis;
     [leftAxis addLimitLine:llXAxis];
-    leftAxis.startAtZeroEnabled = NO;
+    //leftAxis.startAtZeroEnabled = NO;
     leftAxis.gridLineDashLengths = @[@5.f, @2.5f];
     leftAxis.drawLimitLinesBehindDataEnabled = YES;
     
@@ -171,13 +171,13 @@ NSMutableDictionary *_localScanDictionary;
             aReflectance = [scanDictionary[kKSTDataManagerAbsorbance] objectAtIndex:index];
         }
         
-        [lineChartDataArrayY addObject:[[ChartDataEntry alloc] initWithValue:aReflectance.doubleValue xIndex:index]];
+        [lineChartDataArrayY addObject:[[ChartDataEntry alloc] initWithX:index y:aReflectance.doubleValue]];
         [lineChartDataArrayX addObject:[NSString stringWithFormat:@"%2.0f", aWavelengthOrNumber.floatValue]];
         index++;
     }
-    
-    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:lineChartDataArrayY label:@"Absorbance"];
-    
+
+    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithValues:lineChartDataArrayY label:@"Absorbance"];
+
     set1.drawValuesEnabled = YES;
     set1.drawFilledEnabled = YES;
     set1.drawCircleHoleEnabled = YES;
@@ -195,7 +195,7 @@ NSMutableDictionary *_localScanDictionary;
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
     [dataSets addObject:set1];
     
-    _absorbanceData = [[LineChartData alloc] initWithXVals:lineChartDataArrayX dataSets:dataSets];
+    _absorbanceData = [[LineChartData alloc] initWithDataSet:set1];
 }
 
 -(void)setupIntensity
@@ -224,12 +224,12 @@ NSMutableDictionary *_localScanDictionary;
             aReflectance = [scanDictionary[kKSTDataManagerIntensity] objectAtIndex:index];
         }
         
-        [lineChartDataArrayY addObject:[[ChartDataEntry alloc] initWithValue:aReflectance.doubleValue xIndex:index]];
+        [lineChartDataArrayY addObject:[[ChartDataEntry alloc] initWithX:index y:aReflectance.doubleValue]];
         [lineChartDataArrayX addObject:[NSString stringWithFormat:@"%2.0f", aWavelengthOrNumber.floatValue]];
         index++;
     }
     
-    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:lineChartDataArrayY label:@"Intensity"];
+    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithValues:lineChartDataArrayY label:@"Intensity"];
     
     set1.drawValuesEnabled = YES;
     set1.drawFilledEnabled = YES;
@@ -247,8 +247,9 @@ NSMutableDictionary *_localScanDictionary;
     
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
     [dataSets addObject:set1];
-    
-    _intensityData = [[LineChartData alloc] initWithXVals:lineChartDataArrayX dataSets:dataSets];
+
+    _intensityData = [[LineChartData alloc] initWithDataSet:set1];
+
 }
 
 -(void)setupReflectance
@@ -288,33 +289,12 @@ NSMutableDictionary *_localScanDictionary;
         }
         
 #pragma mark TODO Look at the boundaries of the slew scan and adjust colors on the plot
-        //if( aWavelengthOrNumber.intValue < 1100 )
-            [lineChartDataArrayY_0 addObject:[[ChartDataEntry alloc] initWithValue:aReflectance.doubleValue xIndex:index]];
-        //else
-        //    [lineChartDataArrayY_1 addObject:[[ChartDataEntry alloc] initWithValue:aReflectance.doubleValue xIndex:index]];
-
+        [lineChartDataArrayY_0 addObject:[[ChartDataEntry alloc] initWithX:index y:aReflectance.doubleValue]];
         [lineChartDataArrayX addObject:[NSString stringWithFormat:@"%2.0f", aWavelengthOrNumber.floatValue]];
         index++;
     }
     
-    LineChartDataSet *set0 = [[LineChartDataSet alloc] initWithYVals:lineChartDataArrayY_0 label:@"Reflectance"];
-    
-    set0.drawValuesEnabled = YES;
-    set0.drawFilledEnabled = YES;
-    set0.drawCircleHoleEnabled = YES;
-    
-    set0.lineDashLengths = @[@5.f, @2.5f];
-    [set0 setColor:UIColor.blackColor];
-    [set0 setCircleColor:UIColor.redColor];
-    set0.lineWidth = 1.0;
-    set0.circleRadius = 2.0;
-    set0.drawCircleHoleEnabled = YES;
-    set0.valueFont = [UIFont systemFontOfSize:9.f];
-    set0.fillAlpha = 65/255.0;
-    set0.fillColor = UIColor.redColor;
-    
-    /*
-    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:lineChartDataArrayY_1 label:@"Reflectance"];
+    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithValues:lineChartDataArrayY_0 label:@"Reflectance"];
     
     set1.drawValuesEnabled = YES;
     set1.drawFilledEnabled = YES;
@@ -322,20 +302,18 @@ NSMutableDictionary *_localScanDictionary;
     
     set1.lineDashLengths = @[@5.f, @2.5f];
     [set1 setColor:UIColor.blackColor];
-    [set1 setCircleColor:UIColor.greenColor];
+    [set1 setCircleColor:UIColor.redColor];
     set1.lineWidth = 1.0;
     set1.circleRadius = 2.0;
     set1.drawCircleHoleEnabled = YES;
     set1.valueFont = [UIFont systemFontOfSize:9.f];
     set1.fillAlpha = 65/255.0;
-    set1.fillColor = UIColor.greenColor;
-    */
+    set1.fillColor = UIColor.redColor;
     
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
-    [dataSets addObject:set0];
-    //[dataSets addObject:set1];
+    [dataSets addObject:set1];
     
-    _reflectanceData = [[LineChartData alloc] initWithXVals:lineChartDataArrayX dataSets:dataSets];
+    _reflectanceData = [[LineChartData alloc] initWithDataSet:set1];
 }
 
 #pragma mark - ChartViewDelegate

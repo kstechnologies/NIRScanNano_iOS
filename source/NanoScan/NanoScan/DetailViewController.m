@@ -75,8 +75,8 @@ float yMin;
     _chartView.pinchZoomEnabled = YES;
     _chartView.drawGridBackgroundEnabled = NO;
     _chartView.xAxis.labelPosition = XAxisLabelPositionBottom;
-    _chartView.xAxis.spaceBetweenLabels = 5;
-    _chartView.maxVisibleValueCount = 25;
+   // _chartView.xAxis.spaceBetweenLabels = 5;
+    _chartView.maxVisibleCount = 25;
     
     // x-axis limit line
     ChartLimitLine *llXAxis = [[ChartLimitLine alloc] initWithLimit:0.0 label:@"0.0"];
@@ -88,7 +88,7 @@ float yMin;
     
     ChartYAxis *leftAxis = _chartView.leftAxis;
     [leftAxis addLimitLine:llXAxis];
-    leftAxis.startAtZeroEnabled = NO;
+    //leftAxis.startAtZeroEnabled = NO;
     leftAxis.gridLineDashLengths = @[@5.f, @2.5f];
     leftAxis.drawLimitLinesBehindDataEnabled = YES;
     
@@ -137,12 +137,12 @@ float yMin;
             aReflectance = [_detailItem[kKSTDataManagerAbsorbance] objectAtIndex:index];
         }
         
-        [lineChartDataArrayY addObject:[[ChartDataEntry alloc] initWithValue:aReflectance.doubleValue xIndex:index]];
+        [lineChartDataArrayY addObject:[[ChartDataEntry alloc] initWithX:index y:aReflectance.doubleValue]];
         [lineChartDataArrayX addObject:[NSString stringWithFormat:@"%2.0f", aWavelengthOrNumber.floatValue]];
         index++;
     }
     
-    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:lineChartDataArrayY label:@"Absorbance"];
+    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithValues:lineChartDataArrayY label:@"Absorbance"];
     
     set1.drawValuesEnabled = YES;
     set1.drawFilledEnabled = YES;
@@ -161,7 +161,7 @@ float yMin;
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
     [dataSets addObject:set1];
     
-    _absorbanceData = [[LineChartData alloc] initWithXVals:lineChartDataArrayX dataSets:dataSets];
+    _absorbanceData = [[LineChartData alloc] initWithDataSet:set1];
 }
 
 -(void)setupIntensity
@@ -188,12 +188,12 @@ float yMin;
             aReflectance = [_detailItem[kKSTDataManagerIntensity] objectAtIndex:index];
         }
         
-        [lineChartDataArrayY addObject:[[ChartDataEntry alloc] initWithValue:aReflectance.doubleValue xIndex:index]];
+        [lineChartDataArrayY addObject:[[ChartDataEntry alloc] initWithX:index y:aReflectance.doubleValue]];
         [lineChartDataArrayX addObject:[NSString stringWithFormat:@"%2.0f", aWavelengthOrNumber.floatValue]];
         index++;
     }
     
-    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:lineChartDataArrayY label:@"Intensity"];
+    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithValues:lineChartDataArrayY label:@"Intensity"];
     
     set1.drawValuesEnabled = YES;
     set1.drawFilledEnabled = YES;
@@ -212,7 +212,7 @@ float yMin;
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
     [dataSets addObject:set1];
     
-    _intensityData = [[LineChartData alloc] initWithXVals:lineChartDataArrayX dataSets:dataSets];
+    _intensityData = [[LineChartData alloc] initWithDataSet:set1];
 }
 
 -(void)setupReflectance
@@ -239,12 +239,12 @@ float yMin;
             aReflectance = [_detailItem[kKSTDataManagerReflectance] objectAtIndex:index];
         }
         
-        [lineChartDataArrayY addObject:[[ChartDataEntry alloc] initWithValue:aReflectance.doubleValue xIndex:index]];
+        [lineChartDataArrayY addObject:[[ChartDataEntry alloc] initWithX:index y:aReflectance.doubleValue]];
         [lineChartDataArrayX addObject:[NSString stringWithFormat:@"%2.0f", aWavelengthOrNumber.floatValue]];
         index++;
     }
     
-    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:lineChartDataArrayY label:@"Reflectance"];
+    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithValues:lineChartDataArrayY label:@"Reflectance"];
     
     set1.drawValuesEnabled = YES;
     set1.drawFilledEnabled = YES;
@@ -263,7 +263,7 @@ float yMin;
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
     [dataSets addObject:set1];
     
-    _reflectanceData = [[LineChartData alloc] initWithXVals:lineChartDataArrayX dataSets:dataSets];
+    _reflectanceData = [[LineChartData alloc] initWithDataSet:set1];
 }
 
 #pragma mark - ChartViewDelegate
